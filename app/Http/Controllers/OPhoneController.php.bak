@@ -1,0 +1,17 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Models\Ophone;
+
+class OPhoneController extends Controller
+{
+    public function index(){
+		//dd('OPhoneController');
+        //return view('main');
+		$ophones = Ophone::all();
+		//dd($ophones);
+		return view(ophones);
+    }
+}
