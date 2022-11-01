@@ -18,4 +18,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'PhoneController@index')->name('phone.index');
 Route::get('/ophone', 'OphoneController@index')->name('ophone.index');
 Route::get('/ophone/create', 'OphoneController@create')->name('ophone.create');
+Route::post('/ophone', 'OphoneController@store')->name('ophone.store');
+
 Route::get('/about', 'AboutController@index')->name('about.index');
