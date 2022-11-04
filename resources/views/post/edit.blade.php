@@ -7,7 +7,7 @@
             @method('patch')
             <div class="mb-3">
                 <label for="title" class="form-label">title</label>
-                <input type="text" name= "title" class="form-control" id="title" placeholder="title" value="{{$post->title}}"
+                <input type="text" name= "title" class="form-control" id="title" placeholder="title" value="{{$post->title}}">
             </div>
             <div class="mb-3">
                 <label for="content" class="form-label">content</label>
@@ -32,18 +32,9 @@
         </form> 
         
     </div>
-
-
-
-
     <div>
-        this is phone page (post /  create.blad)
-
-       
-
-
-
-    </div>    
+        <a href="{{route('post.update', $post->id )}}">Back</a>
+    </div> 
 
 
 @endsection

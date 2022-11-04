@@ -1,10 +1,8 @@
 
 @extends('layouts.main')
 @section('content')
-    <div>
-        
-
-        <table class="table table-hover" id="serch-table">
+<div>
+  <table class="table table-hover" id="serch-table">
   <thead>
     <tr>
 
@@ -15,23 +13,16 @@
       <th scope="col">is_published</th>
     </tr>
   </thead>
-
-  
-
   <tbody>
-
-    
-        <tr>
-          <a href="{{route('post.show', $post->id)}}">
+      <tr>
+          <!--<a href="{{route('post.show', $post->id)}}">-->
             <th> {{$post->title}}</th>
             <th> {{$post->content}}</th>
             <td> {{$post->image}} </td>
             <td> {{$post->likes}}</td>
             <td> {{$post->is_published}}</td>
-           </a>  
-        </tr>
-  
-  
+           <!--</a>  -->
+      </tr>
   </tbody>
 </table>
 <div>
@@ -44,8 +35,7 @@
       @method('delete')
       <input type= 'submit' value="Delete">
     </form>
-        <a href="{{route('post.destroy', $post->id)}}">Destroy</a>
-
+        
 </div>
     
 <div>

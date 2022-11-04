@@ -34,11 +34,8 @@
         <table class="table table-hover" id="serch-table">
   <thead>
     <tr>
-      <th scope="col">title</th>
-      <th scope="col">content</th>
-      <th scope="col">image</th>
-      <th scope="col">likes</th>
-      <th scope="col">is_published</th>
+      <th scope="col">quote</th>
+      
 
     </tr>
   </thead>
@@ -47,15 +44,11 @@
 
   <tbody>
 
-    @foreach($posts as $post)
+    @foreach($quotes as $quote)
         <tr>
             
-                <th> <a href="{{route('post.show', $post->id)}}"> {{$post->title}}</a> </th>
-                <th> <a href="{{route('post.show', $post->id)}}"> {{$post->content}}</a></th>
-                <td> <a href="{{route('post.show', $post->id)}}"> {{$post->image}} </a></td>
-                <td> <a href="{{route('post.show', $post->id)}}"> {{$post->image}}</a></td>
-                <td> <a href="{{route('post.show', $post->id)}}"> {{$post->is_published}}</a></td>
-            
+                <th> <a href="{{route('quote.show', $quote->id)}}"> {{$quote->quote}}</a> </th>
+               
         </tr>
   
   @endforeach
@@ -66,7 +59,7 @@
     </div>
 
    <div>
-        <a href="{{route('post.create')}}">Add One</a>
+        <a href="{{route('quote.create')}}">Add One</a>
 
     </div>
 @endsection

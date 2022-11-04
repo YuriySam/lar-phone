@@ -45,6 +45,15 @@
         <li class="nav-item">
           <a class="nav-link disabled">Disabled</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{route('branch.index')}}">Branch</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{route('func.index')}}">Func</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{route('quote.index')}}">Quote</a>
+        </li>
       </ul>
       
       <form class="d-flex" role="search">

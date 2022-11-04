@@ -48,11 +48,11 @@
 
     @foreach($ophones as $ophone)
         <tr>
-            <th> {{$ophone->number}}</th>
-            <th> {{$ophone->number1}}</th>
-            <td> {{$ophone->surname}} {{$ophone->name}} {{$ophone->name}}</td>
-            <td> {{$ophone->funid}}</td>
-            <td> {{$ophone->branid}}</td>
+            <th> <a href="{{route('ophone.show', $ophone->id)}}"> {{$ophone->number}}</a></th>
+            <th> <a href="{{route('ophone.show', $ophone->id)}}"> {{$ophone->number1}}</a></th>
+            <td> <a href="{{route('ophone.show', $ophone->id)}}"> {{$ophone->surname}} {{$ophone->name}} {{$ophone->name}}</a> </td>
+            <td> <a href="{{route('ophone.show', $ophone->id)}}"> {{$ophone->funid}} </a></td>
+            <td> <a href="{{route('ophone.show', $ophone->id)}}"> {{$ophone->branid}}</a></td>
         </tr>
   
   @endforeach

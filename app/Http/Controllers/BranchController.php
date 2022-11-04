@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Models\Post;
+use App\Models\branch;
 
-class PostController extends Controller
+class BranchController extends Controller
 {
     public function index()
     {
@@ -18,9 +18,9 @@ class PostController extends Controller
         echo "<BR> likes= " . $post->likes;
         echo "<BR>";
         */
-        
-        
-        $posts = Post::all();
+
+
+        $branchs = Branch::all();
         
         
         
@@ -37,59 +37,57 @@ class PostController extends Controller
         //echo 'posts_new';
         //dd($posts);
         //   return view('post', compact('posts'));
-        return view('post.index', compact('posts'));
+        return view('branch.index', compact('branchs'));
     }
+
+
 
     public function create()
     {
-        return view('post.create');
+        return view('branch.create');
     }
 
+
+    
     public function store()
     {
         $data = request()->validate([
-            'title' => 'string',
-            'content' => 'string',
-            'image' => 'string',
-            'likes' => 'integer',
-            'is_published' => 'integer',
+            'branch' => 'string',
+            'bransort' => 'integer',
+            
             
         ]);
-        Post::create($data);
-        return redirect()->route('post.index');
+        Branch::create($data);
+        return redirect()->route('branch.index');
     }
 
-    public function show(Post $post){
+    public function show(Branch $branch){
         
-        return view('post.show', compact('post'));
+        return view('branch.show', compact('branch'));
     }
 
-    public function edit(Post $post)
+    public function edit(branch $branch)
     {
         
-        return view('post.edit', compact('post'));
+        return view('branch.edit', compact('branch'));
     }
 
 
-    public function update(Post $post)
+    public function update(Branch $branch)
     {
         
         $data = request()->validate([
-            'title' => 'string',
-            'content' => 'string',
-            'image' => 'string',
-            'likes' => 'integer',
-            'is_published' => 'integer',
-
+            'branch' => 'string',
+            'bransort' => 'integer',
         ]);
         //dd($data);
-        $post->update($data);
-        return redirect()->route('post.show', $post->id);
+        $branch->update($data);
+        return redirect()->route('branch.show', $branch->id);
     }
 
     public function delete()
     {
-        $post = Post::find(5);
+        $post = Branch::find(5);
         $post->delete();
 
         dd('delete psge' . $post->id);
@@ -98,18 +96,18 @@ class PostController extends Controller
     
     public function undelete()
     {
-        $post = Post::withTrashed()->find(5);
+        $post = Branch::withTrashed()->find(5);
         $post->restore();
 
         dd('undelete psge  ' . $post->id);
     }
 
 
-    public function destroy(Post $post)
+    public function destroy(Branch $branch)
     {
-        $post->delete();
+        $branch->delete();
 
-        return redirect()->route('post.index');
+        return redirect()->route('branch.index');
     }
     
    
@@ -126,7 +124,7 @@ class PostController extends Controller
             'is_published' => '1'
 
         ];
-        $post = Post::firstOrCreate(
+        $post = Branch::firstOrCreate(
             [
                 'title' => '22title of post from vscode',
             ],
@@ -154,7 +152,7 @@ class PostController extends Controller
     {
         //dd('updateOrCreate');
 
-        $post = Post::updateOrCreate(
+        $branch = Branch::updateOrCreate(
             [
                 'title' => 'updateOrCreate 22title of post from vscode',
             ],
@@ -171,6 +169,6 @@ class PostController extends Controller
         );
 
 
-        dd('updateOrCreate records id= ' . $post->id);
+        dd('updateOrCreate records id= ' . $branch->id);
     }
 }

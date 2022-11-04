@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Models\Post;
+use App\Models\func;
 
-class PostController extends Controller
+class FuncController extends Controller
 {
     public function index()
     {
@@ -18,9 +18,9 @@ class PostController extends Controller
         echo "<BR> likes= " . $post->likes;
         echo "<BR>";
         */
-        
-        
-        $posts = Post::all();
+
+
+        $funcs = Func::all();
         
         
         
@@ -37,79 +37,75 @@ class PostController extends Controller
         //echo 'posts_new';
         //dd($posts);
         //   return view('post', compact('posts'));
-        return view('post.index', compact('posts'));
+        return view('func.index', compact('funcs'));
     }
+
+
 
     public function create()
     {
-        return view('post.create');
+        return view('func.create');
     }
 
+
+    
     public function store()
     {
         $data = request()->validate([
-            'title' => 'string',
-            'content' => 'string',
-            'image' => 'string',
-            'likes' => 'integer',
-            'is_published' => 'integer',
-            
-        ]);
-        Post::create($data);
-        return redirect()->route('post.index');
+            'func' => 'string',
+            'funindex' => 'integer',
+         ]);
+        Func::create($data);
+        return redirect()->route('func.index');
     }
 
-    public function show(Post $post){
+    public function show(Func $func){
         
-        return view('post.show', compact('post'));
+        return view('func.show', compact('func'));
     }
 
-    public function edit(Post $post)
+    public function edit(func $func)
     {
         
-        return view('post.edit', compact('post'));
+        return view('func.edit', compact('func'));
     }
 
 
-    public function update(Post $post)
+    public function update(Func $func)
     {
-        
+
         $data = request()->validate([
-            'title' => 'string',
-            'content' => 'string',
-            'image' => 'string',
-            'likes' => 'integer',
-            'is_published' => 'integer',
-
+            'func' => 'string',
+            'funindex' => 'integer',
         ]);
         //dd($data);
-        $post->update($data);
-        return redirect()->route('post.show', $post->id);
+        $func->update($data);
+        return redirect()->route('func.show', $func->id);
     }
 
     public function delete()
     {
-        $post = Post::find(5);
-        $post->delete();
+        $func = Func::find(5);
+        $func->delete();
 
-        dd('delete psge' . $post->id);
+        dd('delete psge' . $func->id);
     }
 
     
     public function undelete()
     {
-        $post = Post::withTrashed()->find(5);
+        $post = Func::withTrashed()->find(5);
         $post->restore();
 
         dd('undelete psge  ' . $post->id);
     }
 
 
-    public function destroy(Post $post)
+    public function destroy(Func $func)
     {
-        $post->delete();
+        $func->delete();
 
-        return redirect()->route('post.index');
+        return redirect()->route('func.index');
     }
     
    
@@ -126,7 +122,7 @@ class PostController extends Controller
             'is_published' => '1'
 
         ];
-        $post = Post::firstOrCreate(
+        $func = Func::firstOrCreate(
             [
                 'title' => '22title of post from vscode',
             ],
@@ -143,7 +139,7 @@ class PostController extends Controller
         );
 
 
-        dd('firstOrCreate records id= ' . $post->id);
+        dd('firstOrCreate records id= ' . $func->id);
     }
 
     //updateOrCreate - С‡Рё РѕРЅРѕРІР»РµРЅРЅСЏ С‡Рё СЃС‚РІРѕСЂРµРЅРЅСЏ Р·Р° Р·Р°РґР°РЅРёРјРё Р°С‚СЂРёР±СѓС‚Р°РјРё
@@ -154,7 +150,7 @@ class PostController extends Controller
     {
         //dd('updateOrCreate');
 
-        $post = Post::updateOrCreate(
+        $branch = Func::updateOrCreate(
             [
                 'title' => 'updateOrCreate 22title of post from vscode',
             ],
@@ -171,6 +167,6 @@ class PostController extends Controller
         );
 
 
-        dd('updateOrCreate records id= ' . $post->id);
+        dd('updateOrCreate records id= ' . $branch->id);
     }
 }

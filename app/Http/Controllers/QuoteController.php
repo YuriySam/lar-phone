@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Models\Post;
+use App\Models\Quote;
 
-class PostController extends Controller
+class QuoteController extends Controller
 {
     public function index()
     {
@@ -18,9 +18,9 @@ class PostController extends Controller
         echo "<BR> likes= " . $post->likes;
         echo "<BR>";
         */
-        
-        
-        $posts = Post::all();
+
+
+        $quotes = Quote::all();
         
         
         
@@ -37,79 +37,74 @@ class PostController extends Controller
         //echo 'posts_new';
         //dd($posts);
         //   return view('post', compact('posts'));
-        return view('post.index', compact('posts'));
+        return view('quote.index', compact('quotes'));
     }
+
+
 
     public function create()
     {
-        return view('post.create');
+        return view('quote.create');
     }
 
+
+    
     public function store()
     {
         $data = request()->validate([
-            'title' => 'string',
-            'content' => 'string',
-            'image' => 'string',
-            'likes' => 'integer',
-            'is_published' => 'integer',
-            
+            'quote' => 'string',
         ]);
-        Post::create($data);
-        return redirect()->route('post.index');
+        Quote::create($data);
+        return redirect()->route('quote.index');
     }
 
-    public function show(Post $post){
+    public function show(Quote $quote){
         
-        return view('post.show', compact('post'));
+        return view('quote.show', compact('quote'));
     }
 
-    public function edit(Post $post)
+    public function edit(quote $quote)
     {
         
-        return view('post.edit', compact('post'));
+        return view('quote.edit', compact('quote'));
     }
 
 
-    public function update(Post $post)
+    public function update(Quote $quote)
     {
-        
+
         $data = request()->validate([
-            'title' => 'string',
-            'content' => 'string',
-            'image' => 'string',
-            'likes' => 'integer',
-            'is_published' => 'integer',
-
+            'quote' => 'string',
+           
         ]);
         //dd($data);
-        $post->update($data);
-        return redirect()->route('post.show', $post->id);
+        $quote->update($data);
+        return redirect()->route('quote.show', $quote->id);
     }
 
     public function delete()
     {
-        $post = Post::find(5);
-        $post->delete();
+        $func = Quote::find(5);
+        $func->delete();
 
-        dd('delete psge' . $post->id);
+        dd('delete psge' . $quote->id);
     }
 
     
     public function undelete()
     {
-        $post = Post::withTrashed()->find(5);
+        $post = Func::withTrashed()->find(5);
         $post->restore();
 
         dd('undelete psge  ' . $post->id);
     }
 
 
-    public function destroy(Post $post)
+    public function destroy(Func $func)
     {
-        $post->delete();
+        $func->delete();
 
-        return redirect()->route('post.index');
+        return redirect()->route('func.index');
     }
     
    
@@ -126,7 +121,7 @@ class PostController extends Controller
             'is_published' => '1'
 
         ];
-        $post = Post::firstOrCreate(
+        $quote = Quote::firstOrCreate(
             [
                 'title' => '22title of post from vscode',
             ],
@@ -143,7 +138,7 @@ class PostController extends Controller
         );
 
 
-        dd('firstOrCreate records id= ' . $post->id);
+        dd('firstOrCreate records id= ' . $quote->id);
     }
 
     //updateOrCreate - С‡Рё РѕРЅРѕРІР»РµРЅРЅСЏ С‡Рё СЃС‚РІРѕСЂРµРЅРЅСЏ Р·Р° Р·Р°РґР°РЅРёРјРё Р°С‚СЂРёР±СѓС‚Р°РјРё
@@ -154,7 +149,7 @@ class PostController extends Controller
     {
         //dd('updateOrCreate');
 
-        $post = Post::updateOrCreate(
+        $branch = Quote::updateOrCreate(
             [
                 'title' => 'updateOrCreate 22title of post from vscode',
             ],
@@ -171,6 +166,6 @@ class PostController extends Controller
         );
 
 
-        dd('updateOrCreate records id= ' . $post->id);
+        dd('updateOrCreate records id= ' . $branch->id);
     }
 }

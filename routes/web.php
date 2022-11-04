@@ -20,6 +20,10 @@ Route::get('/', 'PhoneController@index')->name('phone.index');
 Route::get('/ophone', 'OphoneController@index')->name('ophone.index');
 Route::get('/ophone/create', 'OphoneController@create')->name('ophone.create');
 Route::post('/ophone', 'OphoneController@store')->name('ophone.store');
+Route::get('/ophone/{ophone}', 'OphoneController@show')->name('ophone.show');
+Route::get('/ophone/{ophone}/edit', 'OphoneController@edit')->name('ophone.edit');
+Route::patch('/ophone/{ophone}', 'OphoneController@update')->name('ophone.update');
+Route::delete('/ophone/{ophone}', 'OphoneController@destroy')->name('ophone.destroy');
 
 Route::get('/about', 'AboutController@index')->name('about.index');
 
@@ -30,3 +34,28 @@ Route::get('/post/{post}', 'PostController@show')->name('post.show');
 Route::get('/post/{post}/edit', 'PostController@edit')->name('post.edit');
 Route::patch('/post/{post}', 'PostController@update')->name('post.update');
 Route::delete('/post/{post}', 'PostController@destroy')->name('post.destroy');
+
+Route::get('/branch',              'BranchController@index')->name('branch.index');
+Route::get('/branch/create',       'BranchController@create')->name('branch.create');
+Route::post('/branch',              'BranchController@store')->name('branch.store');
+Route::get('/branch/{branch}',     'BranchController@show')->name('branch.show');
+Route::get('/branch/{branch}/edit', 'BranchController@edit')->name('branch.edit');
+Route::patch('/branch/{branch}',     'BranchController@update')->name('branch.update');
+Route::delete('/branch/{branch}',     'BranchController@destroy')->name('branch.destroy');
+
+Route::get('/func',            'FuncController@index')->name('func.index');
+Route::get('/func/create',     'FuncController@create')->name('func.create');
+Route::post('/func',      'FuncController@store')->name('func.store');
+Route::get('/func/{func}',     'FuncController@show')->name('func.show');
+Route::get('/func/{func}/edit', 'FuncController@edit')->name('func.edit');
+Route::patch('/func/{func}',     'FuncController@update')->name('func.update');
+Route::delete('/func/{func}',     'FuncController@destroy')->name('func.destroy');
+
+Route::get('/quote',            'QuoteController@index')->name('quote.index');
+Route::get('/quote/create',     'QuoteController@create')->name('quote.create');
+Route::post('/quote',      'QuoteController@store')->name('quote.store');
+Route::get('/quote/{quote}',     'QuoteController@show')->name('quote.show');
+Route::get('/quote/{quote}/edit', 'QuoteController@edit')->name('quote.edit');
+Route::patch('/quote/{quote}',     'QuoteController@update')->name('quote.update');
+Route::delete('/quote/{quote}',     'QuoteController@destroy')->name('quote.destroy');
+
