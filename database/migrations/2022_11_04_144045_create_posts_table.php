@@ -27,9 +27,12 @@ class CreatePostsTable extends Migration
             $table->softDeletes(); //м'яке водалення записів з таблиці
 
             //привяжемо до категорій
-            $table->unsignedBigInteger('category_id')->nullable();
-            $table->index('category_id', 'post_category_idx');
-            $table->foreign('category_id', 'post_category_fk')->on('categories')->references('id');
+            //$table->bigInteger('category_id')->nullable();//створити індексне поле для category
+            //$table->index('category_id', 'post_category_idx');//створити індекс та присвоїти йому імя
+            //$table->foreign('category_id', 'post_category_fk')->references('id')->on('categories');
+            //$table->foreignId('user_id') ->nullable() ->constrained();
+            $table->foreignId('category_id')->nullable()->constrained('categories');//створимо поле category_id та звяжемо його з індекним полем таблиці categories
+
             
         });
     }

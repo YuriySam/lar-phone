@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Post;
+use App\Models\Category;
 
 class PostController extends Controller
 {
@@ -18,11 +19,17 @@ class PostController extends Controller
         echo "<BR> likes= " . $post->likes;
         echo "<BR>";
         */
-        
-        
-        $posts = Post::all();
-        
-        
+
+
+        //$posts = Post::all();
+        $categories = Category::all();
+        $category = Category::find(1);
+        $post = Post::find(1);
+
+        //$posts = Post::where('category_id', $category->id)->get();
+
+        //dd($category->posts);
+        dd($post->category);
         
         /*
         foreach ($posts as $post) {
