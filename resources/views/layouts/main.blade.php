@@ -54,6 +54,12 @@
         <li class="nav-item">
           <a class="nav-link" href="{{route('quote.index')}}">Quote</a>
         </li>
+         <li class="nav-item">
+          <a class="nav-link" href="{{route('category.index')}}">Category</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{route('tag.index')}}">Tag</a>
+        </li>
       </ul>
       
       <form class="d-flex" role="search">

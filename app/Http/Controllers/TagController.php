@@ -4,17 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Models\Post;
-use App\Models\Category;
 use App\Models\Tag;
 
-class PostController extends Controller
+class TagController extends Controller
 {
     public function index()
     {
-       // $post = Post::find(1);
-        //$tag = Tag::find(1);
-
+        //$post = Post::find(1);
         //$str = 'string';
         //var_dump($str);
         /*
@@ -23,17 +19,10 @@ class PostController extends Controller
         echo "<BR>";
         */
 
-        ///dd($tag->posts);
-        //dd($post->tag);
-        $posts = Post::all();
-        //$categories = Category::all();
-        //$category = Category::find(1);
-        //$post = Post::find(1);
 
-        //$posts = Post::where('category_id', $category->id)->get();
-
-        //dd($category->posts);
-        //dd($post->category);
+        $tags = Tag::all();
+        
+        
         
         /*
         foreach ($posts as $post) {
@@ -48,86 +37,77 @@ class PostController extends Controller
         //echo 'posts_new';
         //dd($posts);
         //   return view('post', compact('posts'));
-        
-        return view('post.index', compact('posts'));
+        return view('tag.index', compact('tags'));
     }
+
+
 
     public function create()
     {
-        $categories= Category::All();
-        return view('post.create', compact('categories'));
+        return view('tag.create');
     }
 
+
+    
     public function store()
     {
-        
         $data = request()->validate([
             'title' => 'string',
-            'content' => 'string',
-            'image' => 'string',
-            'likes' => 'integer',
-            'is_published' => 'integer',
-            'category_id '=> 'integer',
             
         ]);
-        dd($data);
-        
-        Post::create($data);
-       
-        return redirect()->route('post.index');
+        Tag::create($data);
+        return redirect()->route('tag.index');
     }
 
-    public function show(Post $post){
+    public function show(Tag $tag){
         
-        return view('post.show', compact('post'));
+        return view('tag.show', compact('tag'));
     }
 
-    public function edit(Post $post)
+    public function edit(Tag $tag)
     {
         
-        return view('post.edit', compact('post'));
+        return view('tag.edit', compact('tag'));
     }
 
 
-    public function update(Post $post)
+    public function update(Tag $tag)
     {
         
         $data = request()->validate([
             'title' => 'string',
-            'content' => 'string',
-            'image' => 'string',
-            'likes' => 'integer',
-            'is_published' => 'integer',
-
+           
         ]);
         //dd($data);
-        $post->update($data);
-        return redirect()->route('post.show', $post->id);
+        $tag->update($data);
+        return redirect()->route('tag.show', $tag->id);
     }
 
     public function delete()
     {
-        $post = Post::find(5);
-        $post->delete();
+        $tag = Tag::find(5);
+        dd('delete psge' . $tag->id);
 
-        dd('delete psge' . $post->id);
+        $tag->delete();
+
+        dd('delete psge' . $tag->id);
     }
 
     
     public function undelete()
     {
-        $post = Post::withTrashed()->find(5);
-        $post->restore();
+        $tag = Tag::withTrashed()->find(5);
+        $tag->restore();
 
-        dd('undelete psge  ' . $post->id);
+        dd('undelete psge  ' . $tag->id);
     }
 
 
-    public function destroy(Post $post)
+    public function destroy(Tag $tag)
     {
-        $post->delete();
+        $tag->delete();
 
-        return redirect()->route('post.index');
+        return redirect()->route('tag.index');
     }
     
    
@@ -144,9 +124,9 @@ class PostController extends Controller
             'is_published' => '1'
 
         ];
-        $post = Post::firstOrCreate(
+        $category = Tag::firstOrCreate(
             [
-                'title' => '22title of post from vscode',
+                'title' => '22title of category from vscode',
             ],
             [
 
@@ -161,7 +141,7 @@ class PostController extends Controller
         );
 
 
-        dd('firstOrCreate records id= ' . $post->id);
+        dd('firstOrCreate records id= ' . $tag->id);
     }
 
     //updateOrCreate - С‡Рё РѕРЅРѕРІР»РµРЅРЅСЏ С‡Рё СЃС‚РІРѕСЂРµРЅРЅСЏ Р·Р° Р·Р°РґР°РЅРёРјРё Р°С‚СЂРёР±СѓС‚Р°РјРё
@@ -172,7 +152,7 @@ class PostController extends Controller
     {
         //dd('updateOrCreate');
 
-        $post = Post::updateOrCreate(
+        $tag = Tag::updateOrCreate(
             [
                 'title' => 'updateOrCreate 22title of post from vscode',
             ],
@@ -189,6 +169,6 @@ class PostController extends Controller
         );
 
 
-        dd('updateOrCreate records id= ' . $post->id);
+        dd('updateOrCreate records id= ' . $tag->id);
     }
 }

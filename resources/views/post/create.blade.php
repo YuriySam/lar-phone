@@ -24,10 +24,25 @@
                 <label for="is_published" class="form-label">is_published</label>
                 <input type="text" name= "is_published"class="form-control" id="is_published" placeholder="is_published">
             </div>
+            <div>
+                <label for="category" class="form-label">Category</label>
+                <select class="form-select" aria-label="category"  name="category_id">
+                <option selected></option>
+                @foreach($categories as $category)
+                    <option value="{{$category->id}}">{{$category->title}}</option>
+                @endforeach
+                </select>
+            </div>
+
+
             
             <div class="mb-3">
             <button type="submit" class="btn btn-primary mb-3">Додати</button>      
             </div>
+            
+
+
+
         </form> 
         
     </div>

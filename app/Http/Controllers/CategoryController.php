@@ -4,17 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Models\Post;
 use App\Models\Category;
-use App\Models\Tag;
 
-class PostController extends Controller
+class CategoryController extends Controller
 {
     public function index()
     {
-       // $post = Post::find(1);
-        //$tag = Tag::find(1);
-
+        //$post = Post::find(1);
         //$str = 'string';
         //var_dump($str);
         /*
@@ -23,17 +19,10 @@ class PostController extends Controller
         echo "<BR>";
         */
 
-        ///dd($tag->posts);
-        //dd($post->tag);
-        $posts = Post::all();
-        //$categories = Category::all();
-        //$category = Category::find(1);
-        //$post = Post::find(1);
 
-        //$posts = Post::where('category_id', $category->id)->get();
-
-        //dd($category->posts);
-        //dd($post->category);
+        $categories = Category::all();
+        
+        
         
         /*
         foreach ($posts as $post) {
@@ -48,86 +37,77 @@ class PostController extends Controller
         //echo 'posts_new';
         //dd($posts);
         //   return view('post', compact('posts'));
-        
-        return view('post.index', compact('posts'));
+        return view('category.index', compact('categories'));
     }
+
+
 
     public function create()
     {
-        $categories= Category::All();
-        return view('post.create', compact('categories'));
+        return view('category.create');
     }
 
+
+    
     public function store()
     {
-        
         $data = request()->validate([
             'title' => 'string',
-            'content' => 'string',
-            'image' => 'string',
-            'likes' => 'integer',
-            'is_published' => 'integer',
-            'category_id '=> 'integer',
             
         ]);
-        dd($data);
-        
-        Post::create($data);
-       
-        return redirect()->route('post.index');
+        Category::create($data);
+        return redirect()->route('category.index');
     }
 
-    public function show(Post $post){
+    public function show(Category $category){
         
-        return view('post.show', compact('post'));
+        return view('category.show', compact('category'));
     }
 
-    public function edit(Post $post)
+    public function edit(Category $category)
     {
         
-        return view('post.edit', compact('post'));
+        return view('category.edit', compact('category'));
     }
 
 
-    public function update(Post $post)
+    public function update(Category $category)
     {
         
         $data = request()->validate([
             'title' => 'string',
-            'content' => 'string',
-            'image' => 'string',
-            'likes' => 'integer',
-            'is_published' => 'integer',
-
+           
         ]);
         //dd($data);
-        $post->update($data);
-        return redirect()->route('post.show', $post->id);
+        $category->update($data);
+        return redirect()->route('category.show', $category->id);
     }
 
     public function delete()
     {
-        $post = Post::find(5);
-        $post->delete();
+        $category = Category::find(5);
+        dd('delete psge' . $category->id);
 
-        dd('delete psge' . $post->id);
+        $category->delete();
+
+        dd('delete psge' . $category->id);
     }
 
     
     public function undelete()
     {
-        $post = Post::withTrashed()->find(5);
-        $post->restore();
+        $category = Category::withTrashed()->find(5);
+        $category->restore();
 
-        dd('undelete psge  ' . $post->id);
+        dd('undelete psge  ' . $category->id);
     }
 
 
-    public function destroy(Post $post)
+    public function destroy(Category $category)
     {
-        $post->delete();
+        $category->delete();
 
-        return redirect()->route('post.index');
+        return redirect()->route('category.index');
     }
     
    
@@ -144,9 +124,9 @@ class PostController extends Controller
             'is_published' => '1'
 
         ];
-        $post = Post::firstOrCreate(
+        $category = Category::firstOrCreate(
             [
-                'title' => '22title of post from vscode',
+                'title' => '22title of category from vscode',
             ],
             [
 
@@ -161,7 +141,7 @@ class PostController extends Controller
         );
 
 
-        dd('firstOrCreate records id= ' . $post->id);
+        dd('firstOrCreate records id= ' . $category->id);
     }
 
     //updateOrCreate - С‡Рё РѕРЅРѕРІР»РµРЅРЅСЏ С‡Рё СЃС‚РІРѕСЂРµРЅРЅСЏ Р·Р° Р·Р°РґР°РЅРёРјРё Р°С‚СЂРёР±СѓС‚Р°РјРё
@@ -172,7 +152,7 @@ class PostController extends Controller
     {
         //dd('updateOrCreate');
 
-        $post = Post::updateOrCreate(
+        $category = Category::updateOrCreate(
             [
                 'title' => 'updateOrCreate 22title of post from vscode',
             ],
@@ -189,6 +169,6 @@ class PostController extends Controller
         );
 
 
-        dd('updateOrCreate records id= ' . $post->id);
+        dd('updateOrCreate records id= ' . $category->id);
     }
 }

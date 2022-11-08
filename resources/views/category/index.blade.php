@@ -34,12 +34,10 @@
         <table class="table table-hover" id="serch-table">
   <thead>
     <tr>
-      <th scope="col">Category</th>
       <th scope="col">title</th>
-      <th scope="col">content</th>
-      <th scope="col">image</th>
-      <th scope="col">likes</th>
-      <th scope="col">is_published</th>
+      <th scope="col">created_at</th>
+      <th scope="col">updated_at</th>
+      <th scope="col">deleted_at</th>
 
     </tr>
   </thead>
@@ -48,16 +46,14 @@
 
   <tbody>
 
-    @foreach($posts as $post)
+    @foreach($categories as $category)
         <tr>
             
-                <th> <a href="{{route('post.show', $post->id)}}"> {{$post->category->title}}</a> </th>
-                <th> <a href="{{route('post.show', $post->id)}}"> {{$post->title}}</a> </th>
-                <th> <a href="{{route('post.show', $post->id)}}"> {{$post->content}}</a></th>
-                <td> <a href="{{route('post.show', $post->id)}}"> {{$post->image}} </a></td>
-                <td> <a href="{{route('post.show', $post->id)}}"> {{$post->image}}</a></td>
-                <td> <a href="{{route('post.show', $post->id)}}"> {{$post->is_published}}</a></td>
-            
+                <th> <a href="{{route('category.show', $category->id)}}"> {{$category->title}}</a> </th>
+                <td> <a href="{{route('category.show', $category->id)}}"> {{$category->created_at}} </a></td>
+                <td> <a href="{{route('category.show', $category->id)}}"> {{$category->updated_at}}</a></td>
+                <td> <a href="{{route('category.show', $category->id)}}"> {{$category->deleted_at}}</a></td>
+                
         </tr>
   
   @endforeach
@@ -68,7 +64,7 @@
     </div>
 
    <div>
-        <a href="{{route('post.create')}}">Add One</a>
+        <a href="{{route('category.create')}}">Add One</a>
 
     </div>
 @endsection
