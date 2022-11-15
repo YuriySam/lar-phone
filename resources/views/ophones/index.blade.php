@@ -34,11 +34,11 @@
         <table class="table table-hover" id="serch-table">
   <thead>
     <tr>
-      <th scope="col">ВАТС</th>
-      <th scope="col">МАТС</th>
-      <th scope="col">ПІБ</th>
-      <th scope="col">Посада</th>
-      <th scope="col">Відділ</th>
+        <th scope="col">ПІБ(surname,name,patronymic)</th>
+        <th scope="col">Посада(func)</th>
+        <th scope="col">Відділ(branch)</th>
+        <th scope="col">ВАТС(number)</th>
+        <th scope="col">МАТС(number1)</th>
     </tr>
   </thead>
 
@@ -48,11 +48,13 @@
 
     @foreach($ophones as $ophone)
         <tr>
+
+            <td> <a href="{{route('ophone.show', $ophone->id)}}"> {{$ophone->surname}} {{$ophone->name}} {{$ophone->patronymic}}</a> </td>
+            <td> <a href="{{route('ophone.show', $ophone->id)}}"> {{$ophone->func->func}} </a></td>
+            <td> <a href="{{route('ophone.show', $ophone->id)}}"> {{$ophone->branch->branch}}</a></td>
             <th> <a href="{{route('ophone.show', $ophone->id)}}"> {{$ophone->number}}</a></th>
             <th> <a href="{{route('ophone.show', $ophone->id)}}"> {{$ophone->number1}}</a></th>
-            <td> <a href="{{route('ophone.show', $ophone->id)}}"> {{$ophone->surname}} {{$ophone->name}} {{$ophone->name}}</a> </td>
-            <td> <a href="{{route('ophone.show', $ophone->id)}}"> {{$ophone->funid}} </a></td>
-            <td> <a href="{{route('ophone.show', $ophone->id)}}"> {{$ophone->branid}}</a></td>
+            
         </tr>
   
   @endforeach

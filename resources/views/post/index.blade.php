@@ -34,6 +34,7 @@
         <table class="table table-hover" id="serch-table">
   <thead>
     <tr>
+      
       <th scope="col">Category</th>
       <th scope="col">title</th>
       <th scope="col">content</th>
@@ -51,6 +52,7 @@
     @foreach($posts as $post)
         <tr>
             
+                
                 <th> <a href="{{route('post.show', $post->id)}}"> {{$post->category->title}}</a> </th>
                 <th> <a href="{{route('post.show', $post->id)}}"> {{$post->title}}</a> </th>
                 <th> <a href="{{route('post.show', $post->id)}}"> {{$post->content}}</a></th>

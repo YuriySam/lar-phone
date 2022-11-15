@@ -5,17 +5,19 @@
   <table class="table table-hover" id="serch-table">
   <thead>
     <tr>
-
+      <th scope="col">category</th>
       <th scope="col">title</th>
       <th scope="col">content</th>
       <th scope="col">image</th>
       <th scope="col">likes</th>
       <th scope="col">is_published</th>
+      
     </tr>
   </thead>
   <tbody>
       <tr>
           <!--<a href="{{route('post.show', $post->id)}}">-->
+            <th> {{$post->category->title}}</th>
             <th> {{$post->title}}</th>
             <th> {{$post->content}}</th>
             <td> {{$post->image}} </td>

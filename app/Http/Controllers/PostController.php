@@ -7,101 +7,107 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Category;
 use App\Models\Tag;
+use App\Models\PostTag;
 
 class PostController extends Controller
 {
     public function index()
     {
-       // $post = Post::find(1);
-        //$tag = Tag::find(1);
-
-        //$str = 'string';
-        //var_dump($str);
         /*
-        echo $post->content;
-        echo "<BR> likes= " . $post->likes;
-        echo "<BR>";
-        */
+            $categories = Category::all();
+            $category = Category::find(1);
+            $post = Post::find(1);
 
-        ///dd($tag->posts);
-        //dd($post->tag);
+            $posts = Post::where('category_id', $category->id)->get();
+
+            dd($category->posts);
+            dd($post->category);
+
+        
+            foreach ($posts as $post) {
+                dump('forich= ' . $post->title);
+            }
+
+            $posts_new = Post::where('is_published', 1)->get();
+            $posts_new1 = Post::where('is_published', 0)->first();
+            dump('posts_new1= ' . $posts_new1->title);
+
+            
+            echo 'posts_new';
+            dd($posts);
+            return view('post', compact('posts'));
+        */
         $posts = Post::all();
-        //$categories = Category::all();
-        //$category = Category::find(1);
-        //$post = Post::find(1);
-
-        //$posts = Post::where('category_id', $category->id)->get();
-
-        //dd($category->posts);
-        //dd($post->category);
-        
-        /*
-        foreach ($posts as $post) {
-            dump('forich= ' . $post->title);
-        }
-
-        $posts_new = Post::where('is_published', 1)->get();
-        $posts_new1 = Post::where('is_published', 0)->first();
-        dump('posts_new1= ' . $posts_new1->title);
-
-        */
-        //echo 'posts_new';
-        //dd($posts);
-        //   return view('post', compact('posts'));
-        
         return view('post.index', compact('posts'));
     }
 
     public function create()
     {
+        $tags=Tag::All();
         $categories= Category::All();
-        return view('post.create', compact('categories'));
+        return view('post.create', compact('categories','tags'));
     }
 
     public function store()
     {
-        
         $data = request()->validate([
-            'title' => 'string',
-            'content' => 'string',
-            'image' => 'string',
-            'likes' => 'integer',
-            'is_published' => 'integer',
-            'category_id '=> 'integer',
+            'title' => 'required|string',
+            'content' => 'required|string',
+            'image' => 'required|string',
+            'likes' => 'required|integer',
+            'is_published' => 'required|integer',
+            'category_id' => 'required',
+            'tags_id' => '',
             
         ]);
-        dd($data);
+        $tags=$data['tags_id'];
+        unset($data['tags_id']);
+        $post = Post::create($data);
+
+        $post -> tags() -> attach($tags);
         
-        Post::create($data);
-       
+        /*
+        foreach ($tags as $tag_id){
+            PostTag::firstOrCreate([
+                'tag_id' => $tag_id,
+                'post_id' => $post->id,
+            ]);
+
+        }
+        */
+
         return redirect()->route('post.index');
     }
 
     public function show(Post $post){
-        
         return view('post.show', compact('post'));
     }
 
-    public function edit(Post $post)
-    {
-        
-        return view('post.edit', compact('post'));
+    public function edit(Post $post){
+        $categories = Category::All();
+        $tags = Tag::All();
+        return view('post.edit', compact('post', 'categories', 'tags'));
     }
 
 
-    public function update(Post $post)
-    {
-        
+    public function update(Post $post) {
+        $categories = Category::All();
         $data = request()->validate([
-            'title' => 'string',
-            'content' => 'string',
-            'image' => 'string',
-            'likes' => 'integer',
-            'is_published' => 'integer',
+            'title' => 'required|string',
+            'content' => 'required|string',
+            'image' => 'required|string',
+            'likes' => 'required|integer',
+            'is_published' => 'required|integer',
+            'category_id' => 'required',
+            'tags_id' => '',
 
         ]);
+
+        $tags = $data['tags_id'];
+        unset($data['tags_id']);
         //dd($data);
         $post->update($data);
+        $post->tags()->sync($tags);
         return redirect()->route('post.show', $post->id);
     }
 

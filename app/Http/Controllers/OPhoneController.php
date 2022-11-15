@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Ophone;
+use App\Models\Banch;
+use App\Models\Func;
 
 class OPhoneController extends Controller
 {
