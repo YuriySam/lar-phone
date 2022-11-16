@@ -6,12 +6,14 @@ use Illuminate\Http\Request;
 use App\Models\Ophone;
 use App\Models\Banch;
 use App\Models\Func;
+use Kyslik\ColumnSortable\Sortable;
 
 class OPhoneController extends Controller
 {
 	public function index()
 	{
 		
+		//$ophones = Ophone::sortable(['Price' => 'desc'])->get();
 		$ophones = Ophone::all();
 		return view('ophones.index', compact('ophones'));
 	}

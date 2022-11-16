@@ -19,11 +19,6 @@ class TagController extends Controller
         echo "<BR>";
         */
 
-
-        $tags = Tag::all();
-        
-        
-        
         /*
         foreach ($posts as $post) {
             dump('forich= ' . $post->title);
@@ -37,6 +32,8 @@ class TagController extends Controller
         //echo 'posts_new';
         //dd($posts);
         //   return view('post', compact('posts'));
+
+        $tags = Tag::all();
         return view('tag.index', compact('tags'));
     }
 
@@ -124,7 +121,7 @@ class TagController extends Controller
             'is_published' => '1'
 
         ];
-        $category = Tag::firstOrCreate(
+        $tag = Tag::firstOrCreate(
             [
                 'title' => '22title of category from vscode',
             ],

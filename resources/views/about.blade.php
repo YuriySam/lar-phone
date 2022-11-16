@@ -2,7 +2,8 @@
 @extends('layouts.main')
 @section('content')
     <div>
-        this is about page (about.blade.php)
+        Вашій увазі пропонується електрона версія телефоного довідника - інформація, котра завжди має бути під рукою.
+       
         
         
     </div>

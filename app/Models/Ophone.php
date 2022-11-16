@@ -13,6 +13,8 @@ class Ophone extends Model
 
     protected $table = 'ophones'; //table to BD
     protected $guarded = []; //список захищених для заповнення полів БД пустий
+    //protected $guarded = false; //зняття захисту для заповнення полів БД
+    
 
     public function branch()
     {

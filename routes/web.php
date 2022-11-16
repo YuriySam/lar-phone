@@ -25,15 +25,8 @@ Route::get('/ophone/{ophone}/edit', 'OphoneController@edit')->name('ophone.edit'
 Route::patch('/ophone/{ophone}', 'OphoneController@update')->name('ophone.update');
 Route::delete('/ophone/{ophone}', 'OphoneController@destroy')->name('ophone.destroy');
 
-Route::get('/about', 'AboutController@index')->name('about.index');
 
-Route::get('/post', 'PostController@index')->name('post.index');
-Route::get('/post/create', 'PostController@create')->name('post.create');
-Route::post('/post', 'PostController@store')->name('post.store');
-Route::get('/post/{post}', 'PostController@show')->name('post.show');
-Route::get('/post/{post}/edit', 'PostController@edit')->name('post.edit');
-Route::patch('/post/{post}', 'PostController@update')->name('post.update');
-Route::delete('/post/{post}', 'PostController@destroy')->name('post.destroy');
+
 
 Route::get('/branch',              'BranchController@index')->name('branch.index');
 Route::get('/branch/create',       'BranchController@create')->name('branch.create');
@@ -59,22 +52,6 @@ Route::get('/quote/{quote}/edit', 'QuoteController@edit')->name('quote.edit');
 Route::patch('/quote/{quote}',     'QuoteController@update')->name('quote.update');
 Route::delete('/quote/{quote}',     'QuoteController@destroy')->name('quote.destroy');
 
-Route::get('/category',            'CategoryController@index')->name('category.index');
-Route::get('/category/create',     'CategoryController@create')->name('category.create');
-Route::post('/category',      'CategoryController@store')->name('category.store');
-Route::get('/category/{category}',     'CategoryController@show')->name('category.show');
-Route::get('/category/{category}/edit', 'CategoryController@edit')->name('category.edit');
-Route::patch('/category/{category}',     'CategoryController@update')->name('category.update');
-Route::delete('/category/{category}',     'CategoryController@destroy')->name('category.destroy');
-
-Route::get('/tag',            'TagController@index')->name('tag.index');
-Route::get('/tag/create',     'TagController@create')->name('tag.create');
-Route::post('/tag',      'TagController@store')->name('tag.store');
-Route::get('/tag/{tag}',     'TagController@show')->name('tag.show');
-Route::get('/tag/{tag}/edit', 'TagController@edit')->name('tag.edit');
-Route::patch('/tag/{tag}',     'TagController@update')->name('tag.update');
-Route::delete('/tag/{tag}',     'TagController@destroy')->name('tag.destroy');
-
 Route::get('/message',            'MessageController@index')->name('message.index');
 Route::get('/message/create',     'MessageController@create')->name('message.create');
 Route::post('/message',      'MessageController@store')->name('message.store');
@@ -82,3 +59,40 @@ Route::get('/message/{message}',     'MessageController@show')->name('message.sh
 Route::get('/message/{message}/edit', 'MessageController@edit')->name('message.edit');
 Route::patch('/message/{message}',     'MessageController@update')->name('message.update');
 Route::delete('/message/{message}',     'MessageController@destroy')->name('message.destroy');
+
+
+Route::get('/about', 'AboutController@index')->name('about.index');
+
+
+Route::group(['namespace' => 'Post'], function () {
+    Route::get('/post', 'IndexController')->name('post.index');
+    Route::get('/post/create', 'CreateController')->name('post.create');
+    Route::post('/post', 'StoreController')->name('post.store');
+    Route::get('/post/{post}', 'ShowController')->name('post.show');
+    Route::get('/post/{post}/edit', 'EditController')->name('post.edit');
+    Route::patch('/post/{post}', 'UpdateController')->name('post.update');
+    Route::delete('/post/{post}', 'DestroyController')->name('post.destroy');
+});
+
+
+Route::group(['namespace' => 'Category'], function () {
+    Route::get('/category',            'IndexController')->name('category.index');
+    Route::get('/category/create',     'CreateController')->name('category.create');
+    Route::post('/category',      'StoreController')->name('category.store');
+    Route::get('/category/{category}',     'ShowController')->name('category.show');
+    Route::get('/category/{category}/edit', 'EditController')->name('category.edit');
+    Route::patch('/category/{category}',     'UpdateController')->name('category.update');
+    Route::delete('/category/{category}',     'DestroyController')->name('category.destroy');
+
+});
+Route::group(['namespace' => 'Tag'], function () {
+    Route::get('/tag',            'IndexController')->name('tag.index');
+    Route::get('/tag/create',     'CreateController')->name('tag.create');
+    Route::post('/tag',      'StoreController')->name('tag.store');
+    Route::get('/tag/{tag}',     'ShowController')->name('tag.show');
+    Route::get('/tag/{tag}/edit', 'EditController')->name('tag.edit');
+    Route::patch('/tag/{tag}',     'UpdateController')->name('tag.update');
+    Route::delete('/tag/{tag}',     'DestroyController')->name('tag.destroy');
+});
+
+

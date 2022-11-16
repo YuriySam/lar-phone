@@ -20,10 +20,9 @@ class CategoryController extends Controller
         */
 
 
-        $categories = Category::all();
-        
-        
-        
+
+
+
         /*
         foreach ($posts as $post) {
             dump('forich= ' . $post->title);
@@ -37,6 +36,7 @@ class CategoryController extends Controller
         //echo 'posts_new';
         //dd($posts);
         //   return view('post', compact('posts'));
+        $categories = Category::all();
         return view('category.index', compact('categories'));
     }
 

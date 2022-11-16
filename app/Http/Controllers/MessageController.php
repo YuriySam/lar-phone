@@ -31,7 +31,7 @@ class MessageController extends Controller
 		//dd($data);
 		Message::create($data);
 		//return view('ophones.create');
-		return redirect()->route('message.index');
+		return redirect()->route('ophone.index');
 
 	}
 

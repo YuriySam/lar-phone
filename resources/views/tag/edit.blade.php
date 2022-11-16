@@ -2,12 +2,12 @@
 @extends('layouts.main')
 @section('content')
     <div>
-        <form action="{{route('tag.update', $category->id)}}" method= "post">
+        <form action="{{route('tag.update', $tag->id)}}" method= "post">
             @csrf
             @method('patch')
             <div class="mb-3">
-                <label for="title" class="form-label">category title</label>
-                <input type="text" name= "title" class="form-control" id="title" placeholder="tag title" value="{{$category->title}}">
+                <label for="title" class="form-label">tag title</label>
+                <input type="text" name= "title" class="form-control" id="title" placeholder="tag title" value="{{$tag->title}}">
             </div>
             
             
@@ -19,7 +19,7 @@
         
     </div>
     <div>
-        <a href="{{route('tag.update', $category->id )}}">Back</a>
+        <a href="{{route('tag.update', $tag->id )}}">Back</a>
     </div> 
 
 
