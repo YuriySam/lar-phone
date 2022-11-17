@@ -56,7 +56,7 @@
                 <th> <a href="{{route('post.show', $post->id)}}"> {{$post->category->title}}</a> </th>
                 <th> <a href="{{route('post.show', $post->id)}}"> {{$post->title}}</a> </th>
                 <th> <a href="{{route('post.show', $post->id)}}"> {{$post->content}}</a></th>
-                <td> <a href="{{route('post.show', $post->id)}}"> {{$post->image}} </a></td>
+                <td> <a href="{{route('post.show', $post->id)}}"> {{$post->likes}} </a></td>
                 <td> <a href="{{route('post.show', $post->id)}}"> {{$post->image}}</a></td>
                 <td> <a href="{{route('post.show', $post->id)}}"> {{$post->is_published}}</a></td>
             
@@ -67,6 +67,9 @@
   </tbody>
 </table>
         
+    </div>
+    <div >
+        {{$posts->links() }}
     </div>
 
    <div>
