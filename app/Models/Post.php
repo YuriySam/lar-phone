@@ -2,6 +2,9 @@
 
 namespace App\Models;
 
+
+
+use App\Models\Traits\Filterable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -9,7 +12,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Post extends Model
 {
+
+    
+    
+    
     use HasFactory;
+    use Filterable;
     use SoftDeletes; //для м'кого видалення 2(2)
 
     protected $table = 'posts'; //table to BD
