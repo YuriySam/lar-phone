@@ -1,10 +1,4 @@
 <?php
-/*
-namespace App\Models\Treits;
-
-use App\Http\Filters\FilterInterface;
-use Illuminate\Database\Eloquent\Builder;
-*/
 
 namespace App\Models\Traits;
 

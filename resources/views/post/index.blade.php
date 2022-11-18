@@ -1,7 +1,7 @@
 
 @extends('layouts.main')
 @section('content')
-    <div>
+<div>
         <!-- for serch item began-->
             <script>
                 function tableSearch() {
@@ -68,9 +68,7 @@
 </table>
         
     </div>
-    <div >
-        {{$posts->links() }}
-    </div>
+    
 
    <div>
         <a href="{{route('post.create')}}">Add One</a>

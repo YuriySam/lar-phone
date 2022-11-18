@@ -27,30 +27,30 @@ class PostFilter extends AbstractFilter
          
         ];}
 
-    public function title($builder, $value){
-        $builder->where('title', 'like','%$value%');
+    public function title(Builder $builder, $value){
+        $builder->where('title', 'like',"%{$value}%");
     }
 
-    public function content($builder, $value)
+    public function content(Builder  $builder, $value)
     {
-        $builder->where('content', 'like', '%$value%');
+        $builder->where('content', 'like', "%{$value}%");
     }
 
-    public function image($builder, $value)
+    public function image(Builder$builder, $value)
     {
-        $builder->where('image', 'like', '%$value%');
+        $builder->where('image', 'like', "%{$value}%");
     }
-    public function likes($builder, $value)
+    public function likes(Builder $builder, $value)
     {
-        $builder->where('likes', 'like', '%$value%');
+        $builder->where('likes',  $value);
     }
-    public function is_published($builder, $value)
+    public function is_published(Builder $builder, $value)
     {
-        $builder->where('is_published', 'like', '%$value%');
+        $builder->where('is_published', $value);
     }
-    public function titcategory_id($builder, $value)
+    public function titcategory_id(Builder $builder, $value)
     {
-        $builder->where('category_id', 'like', '%$value%');
+        $builder->where('category_id',  $value);
     }
 }
 

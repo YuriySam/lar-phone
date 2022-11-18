@@ -29,10 +29,10 @@
                 <a class="navbar-brand" href="{{ route('func.index') }}">Посада(Func)</a>
                 <a class="navbar-brand" href="{{ route('message.index') }}">message</a>
                 <a class="navbar-brand" href="{{ route('quote.index') }}">Quote</a>
-                <a class="navbar-brand" href="{{ route('about.index') }}">About</a>
-                <a class="nav-link " href="{{ route('post.index') }}">Post</a>
-                <a class="nav-link " href="{{ route('category.index') }}">Category</a>
-                <a class="nav-link " href="{{ route('tag.index') }}">Tag</a>
+                <a class="nav-link "href="{{ route('about.index') }}">About</a>
+                <a class="navbar-brand" href="{{ route('post.index') }}">Post</a>
+                <a class="navbar-brand" href="{{ route('category.index') }}">Category</a>
+                <a class="navbar-brand" href="{{ route('tag.index') }}">Tag</a>
 
             </div>
 

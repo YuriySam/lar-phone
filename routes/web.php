@@ -96,3 +96,8 @@ Route::group(['namespace' => 'Tag'], function () {
 });
 
 
+Route::group(['namespace' =>'Admin'], function () {
+    Route::group(['namespace' =>'Post', 'prefix' => 'admin'], function () {
+        Route::get('/post',            'IndexController')->name('admin.post.index');
+    }); 
+});
