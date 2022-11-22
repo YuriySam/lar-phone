@@ -65,8 +65,9 @@
         
     </div>
 
-   <div>
+  <!-- <div>
         <a href="{{route('func.create')}}">Add One</a>
 
     </div>
+-->
 @endsection

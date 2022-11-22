@@ -18,22 +18,26 @@
         <nav class="navbar navbar-expand-lg bg-light">
             <nav class="navbar bg-light">
             <div class="container">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="{{ route('home') }}">
                     <img src="/phone.png" alt="Центр ШМД та МК" width="30" height="24"> Центр ШМД та МК
                 </a>
             </div>
         </nav>
             <div class="container-fluid">
-                <a class="navbar-brand" href="{{ route('ophone.index') }}">Довідник(Ophone)</a>
+                <a class="navbar-brand" href="{{ route('ophone.index') }}">Довідник</a>
                 <a class="navbar-brand" href="{{ route('branch.index') }}">Відділ(Branch)</a>
                 <a class="navbar-brand" href="{{ route('func.index') }}">Посада(Func)</a>
-                <a class="navbar-brand" href="{{ route('message.index') }}">message</a>
-                <a class="navbar-brand" href="{{ route('quote.index') }}">Quote</a>
-                <a class="nav-link "href="{{ route('about.index') }}">About</a>
+                <a class="navbar-brand" href="{{ route('message.index') }}">Повідомлення Адміну(message)</a>
+                <a class="navbar-brand" href="{{ route('quote.index') }}">Мудрі вислови(Quote)</a>
+                <!--<a class="nav-link "href="{{ route('about.index') }}">About</a>
                 <a class="navbar-brand" href="{{ route('post.index') }}">Post</a>
                 <a class="navbar-brand" href="{{ route('category.index') }}">Category</a>
                 <a class="navbar-brand" href="{{ route('tag.index') }}">Tag</a>
-
+                -->
+                <div class="info">
+                        <a href="{{ route ('home')}}" class="d-block">{{ auth()->user()->name }}</a>
+                        
+                    </div>
             </div>
 
         </nav>

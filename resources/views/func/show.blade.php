@@ -24,7 +24,8 @@
       </tr>
   </tbody>
 </table>
-<div>
+<!--
+  <div>
         <a href="{{route('func.edit', $func->id)}}">Edit</a>
 
 </div>
@@ -36,7 +37,7 @@
     </form>
         
 </div>
-    
+-->  
 <div>
         <a href="{{route('func.index')}}">Back</a>
 

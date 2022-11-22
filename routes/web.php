@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 //Route::get('/', function () {return view('welcome');});
 
-Route::get('/', 'PhoneController@index')->name('phone.index');
+//Route::get('/', 'HomeController@index')->name('home.index');
+Route::get('/', 'OphoneController@index')->name('ophone.index');
 
 Route::get('/ophone', 'OphoneController@index')->name('ophone.index');
 Route::get('/ophone/create', 'OphoneController@create')->name('ophone.create');
@@ -35,6 +37,8 @@ Route::get('/branch/{branch}',     'BranchController@show')->name('branch.show')
 Route::get('/branch/{branch}/edit', 'BranchController@edit')->name('branch.edit');
 Route::patch('/branch/{branch}',     'BranchController@update')->name('branch.update');
 Route::delete('/branch/{branch}',     'BranchController@destroy')->name('branch.destroy');
+
+
 
 Route::get('/func',            'FuncController@index')->name('func.index');
 Route::get('/func/create',     'FuncController@create')->name('func.create');
@@ -96,8 +100,59 @@ Route::group(['namespace' => 'Tag'], function () {
 });
 
 
-Route::group(['namespace' =>'Admin'], function () {
-    Route::group(['namespace' =>'Post', 'prefix' => 'admin'], function () {
+Route::group(['namespace' =>'Admin' ], function () {
+    Route::group(['namespace' =>'Post', 'prefix' => 'admin', 'middleware' => 'admin'], function () {
         Route::get('/post',            'IndexController')->name('admin.post.index');
-    }); 
+        Route::get('/post/create', 'CreateController')->name('admin.post.create');
+        Route::post('/post', 'StoreController')->name('admin.post.store');
+        Route::get('/post/{post}', 'ShowController')->name('admin.post.show');
+        Route::get('/post/{post}/edit', 'EditController')->name('admin.post.edit');
+        Route::patch('/post/{post}', 'UpdateController')->name('admin.post.update');
+        Route::delete('/post/{post}', 'DestroyController')->name('admin.post.destroy');
+    });
+    Route::group(['namespace' => 'Category', 'prefix' => 'admin', 'middleware' => 'admin'], function () {
+        Route::get(     '/category',            'IndexController')->        name('admin.category.index');
+        Route::get(     '/category/create',     'CreateController')->       name('admin.category.create');
+        Route::post(    '/category',      'StoreController')->              name('admin.category.store');
+        Route::get(     '/category/{category}',     'ShowController')->     name('admin.category.show');
+        Route::get(     '/category/{category}/edit', 'EditController')->    name('admin.category.edit');
+        Route::patch(   '/category/{category}',     'UpdateController')->   name('admin.category.update');
+        Route::delete(  '/category/{category}',     'DestroyController')->  name('admin.category.destroy');
+    });
+
+    Route::group(['namespace' => 'Ophone', 'prefix' => 'admin', 'middleware' => 'admin'], function () {
+        Route::get(     '/ophone',            'IndexController')->  name('admin.ophone.index');
+        Route::get(     '/ophone/create', 'CreateController')->     name('admin.ophone.create');
+        Route::post(    '/ophone', 'StoreController')->             name('admin.ophone.store');
+        Route::get(     '/ophone/{ophone}', 'ShowController')->     name('admin.ophone.show');
+        Route::get(     '/ophone/{ophone}/edit', 'EditController')->name('admin.ophone.edit');
+        Route::patch(   '/ophone/{ophone}', 'UpdateController')->   name('admin.ophone.update');
+        Route::delete(  '/ophone/{ophone}', 'DestroyController')->  name('admin.ophone.destroy');
+    });
+
+    Route::group(['namespace' => 'Branch', 'prefix' => 'admin', 'middleware' => 'admin'], function () {
+        Route::get(     '/branch',              'IndexController')->name('admin.branch.index');
+        Route::get(     '/branch/create',       'CreateController')->name('admin.branch.create');
+        Route::post(    '/branch',              'StoreController')->name('admin.branch.store');
+        Route::get(     '/branch/{branch}',     'ShowController')->name('admin.branch.show');
+        Route::get(     '/branch/{branch}/edit', 'EditController')->name('admin.branch.edit');
+        Route::patch(   '/branch/{branch}',     'UpdateController')->name('admin.branch.update');
+        Route::delete(  '/branch/{branch}',     'DestroyController')->name('admin.branch.destroy');
+    });
+
+    Route::group(['namespace' => 'Func', 'prefix' => 'admin', 'middleware' => 'admin'], function () {
+        Route::get('/func',             'IndexController')->    name('admin.func.index');
+        Route::get('/func/create',      'CreateController')->   name('admin.func.create');
+        Route::post('/func',            'StoreController')->    name('admin.func.store');
+        Route::get('/func/{func}',      'ShowController')->     name('admin.func.show');
+        Route::get('/func/{func}/edit', 'EditController')->     name('admin.func.edit');
+        Route::patch('/func/{func}',    'UpdateController')->   name('admin.func.update');
+        Route::delete('/func/{func}',   'DestroyController')->  name('admin.func.destroy');
+    });
+
+    
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

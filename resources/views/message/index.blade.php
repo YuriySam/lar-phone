@@ -59,9 +59,10 @@
         </table>
 
     </div>
-
+<!--
     <div>
         <a href="{{ route('message.create') }}">Add One</a>
 
     </div>
+-->
 @endsection

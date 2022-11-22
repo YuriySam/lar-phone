@@ -33,6 +33,7 @@ class CreateOphonesTable extends Migration
             $table->text('userMail','50');
 			
             $table->timestamps();
+            
         });
     }
 

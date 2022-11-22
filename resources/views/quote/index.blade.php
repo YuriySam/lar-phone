@@ -58,8 +58,9 @@
         
     </div>
 
-   <div>
+  <!-- <div>
         <a href="{{route('quote.create')}}">Add One</a>
 
     </div>
+-->
 @endsection

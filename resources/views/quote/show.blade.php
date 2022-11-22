@@ -17,6 +17,7 @@
       </tr>
   </tbody>
 </table>
+<!--
 <div>
         <a href="{{route('quote.edit', $quote->id)}}">Edit</a>
 
@@ -29,7 +30,7 @@
     </form>
         
 </div>
-    
+-->
 <div>
         <a href="{{route('quote.index')}}">Back</a>
 

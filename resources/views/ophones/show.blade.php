@@ -26,7 +26,7 @@
         </tbody>
     </table>
 </div>
-<div>
+<!--<div>
         <a href="{{route('ophone.edit', $ophone->id)}}">Edit</a>
 
 </div>
@@ -38,7 +38,7 @@
     </form>
         
 </div>
-    
+    -->
 <div>
         <a href="{{route('ophone.index')}}">Back</a>
 

@@ -12,10 +12,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Post extends Model
 {
-
-    
-    
-    
     use HasFactory;
     use Filterable;
     use SoftDeletes; //для м'кого видалення 2(2)

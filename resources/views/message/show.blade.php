@@ -24,6 +24,7 @@
       </tr>
   </tbody>
 </table>
+<!--
 <div>
         <a href="{{route('message.edit', $message->id)}}">Edit</a>
 
@@ -36,7 +37,7 @@
     </form>
         
 </div>
-    
+-->
 <div>
         <a href="{{route('message.index')}}">Back</a>
 

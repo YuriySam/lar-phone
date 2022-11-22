@@ -54,12 +54,12 @@
         <tr>
             
                 
-                <th> <a href="{{route('post.show', $post->id)}}"> {{$post->category->title}}</a> </th>
-                <th> <a href="{{route('post.show', $post->id)}}"> {{$post->title}}</a> </th>
-                <th> <a href="{{route('post.show', $post->id)}}"> {{$post->content}}</a></th>
-                <td> <a href="{{route('post.show', $post->id)}}"> {{$post->likes}} </a></td>
-                <td> <a href="{{route('post.show', $post->id)}}"> {{$post->image}}</a></td>
-                <td> <a href="{{route('post.show', $post->id)}}"> {{$post->is_published}}</a></td>
+                <th> <a href="{{route('admin.post.show', $post->id)}}"> {{$post->category->title}}</a> </th>
+                <th> <a href="{{route('admin.post.show', $post->id)}}"> {{$post->title}}</a> </th>
+                <th> <a href="{{route('admin.post.show', $post->id)}}"> {{$post->content}}</a></th>
+                <td> <a href="{{route('admin.post.show', $post->id)}}"> {{$post->likes}} </a></td>
+                <td> <a href="{{route('admin.post.show', $post->id)}}"> {{$post->image}}</a></td>
+                <td> <a href="{{route('admin.post.show', $post->id)}}"> {{$post->is_published}}</a></td>
             
         </tr>
   
@@ -72,7 +72,7 @@
     
 
    <div>
-        <a href="{{route('post.create')}}">Add One</a>
+        <a href="{{route('admin.post.create')}}">Add One</a>
 
     </div>
 

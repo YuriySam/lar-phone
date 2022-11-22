@@ -25,7 +25,7 @@
       </tr>
   </tbody>
 </table>
-<div>
+<!--<div>
         <a href="{{route('branch.edit', $branch->id)}}">Edit</a>
 
 </div>
@@ -37,7 +37,7 @@
     </form>
         
 </div>
-    
+-->
 <div>
         <a href="{{route('branch.index')}}">Back</a>
 
