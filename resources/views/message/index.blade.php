@@ -33,8 +33,8 @@
         <table class="table table-hover" id="serch-table">
             <thead>
                 <tr>
-                    <th scope="col">content</th>
-                    <th scope="col">host</th>
+                    <th scope="col">Зауваження</th>
+                    <th scope="col">Створено</th>
 
 
                 </tr>
@@ -48,7 +48,7 @@
                     <tr>
 
                         <th> <a href="{{ route('message.show', $message->id) }}"> {{ $message->content }}</a> </th>
-                        <td> <a href="{{ route('message.show', $message->id) }}"> {{ $message->host }} </a></td>
+                        <!--<td> <a href="{{ route('message.show', $message->id) }}"> {{ $message->host }} </a></td>-->
                         <td> <a href="{{ route('message.show', $message->id) }}"> {{ $message->updated_at }}</a></td>
                         <td> <a href="{{ route('message.show', $message->id) }}"> {{ $message->deleted_at }}</a></td>
 

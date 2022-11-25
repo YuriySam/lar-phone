@@ -38,6 +38,7 @@
                     <th scope="col">Відділ</th>
                     <th scope="col">ВАТС</th>
                     <th scope="col">МАТС</th>
+                    <th scope="col">Адреса</th>
                     <th scope="col">Ел.Пошта</th>
                 </tr>
             </thead>
@@ -55,6 +56,7 @@
                         <td> <a href="{{ route('ophone.show', $ophone->id) }}"> {{ $ophone->branch->branch }}</a></td>
                         <th> <a href="{{ route('ophone.show', $ophone->id) }}"> {{ $ophone->number }}</a></th>
                         <th> <a href="{{ route('ophone.show', $ophone->id) }}"> {{ $ophone->number1 }}</a></th>
+                        <th> <a href="{{ route('ophone.show', $ophone->id) }}"> {{ $ophone->street->town_pre }} {{ $ophone->street->town }} {{ $ophone->street->street_pre }} {{ $ophone->street->street }} {{ $ophone->house }} {{ $ophone->flet }}</a></th>
                         <th> <a href="{{ route('ophone.show', $ophone->id) }}"> {{ $ophone->userMail }}</a></th>
 
                     </tr>

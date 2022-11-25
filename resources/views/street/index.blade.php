@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.main')
 @section('content')
     <div>
         <!-- for serch item began-->
@@ -33,9 +33,13 @@
         <table class="table table-hover" id="serch-table">
             <thead>
                 <tr>
-                    <th scope="col">content</th>
-                    <th scope="col">host</th>
-
+                    <th scope="col">town_pre</th>
+                    <th scope="col">town</th>
+                    <th scope="col">street_pre</th>
+                    <th scope="col">street</th>
+                    <th scope="col">created_at</th>
+                    <th scope="col">updated_at</th>
+                    <th scope="col">deleted_at</th>
 
                 </tr>
             </thead>
@@ -44,13 +48,16 @@
 
             <tbody>
 
-                @foreach ($messages as $message)
+                @foreach ($streets as $street)
                     <tr>
 
-                        <th> <a href="{{ route('admin.message.show', $message->id) }}"> {{ $message->content }}</a> </th>
-                        <td> <a href="{{ route('admin.message.show', $message->id) }}"> {{ $message->host }} </a></td>
-                        <td> <a href="{{ route('admin.message.show', $message->id) }}"> {{ $message->updated_at }}</a></td>
-                        <td> <a href="{{ route('admin.message.show', $message->id) }}"> {{ $message->deleted_at }}</a></td>
+                        <th> <a href="{{ route('street.show', $street->id) }}"> {{ $street->town_pre }}</a> </th>
+                        <th> <a href="{{ route('street.show', $street->id) }}"> {{ $street->town }}</a></th>
+                        <th> <a href="{{ route('street.show', $street->id) }}"> {{ $street->street_pre }}</a></th>
+                        <th> <a href="{{ route('street.show', $street->id) }}"> {{ $street->street }}</a></th>
+                        <td> <a href="{{ route('street.show', $street->id) }}"> {{ $street->created_at }} </a></td>
+                        <td> <a href="{{ route('street.show', $street->id) }}"> {{ $street->updated_at }}</a></td>
+                        <td> <a href="{{ route('street.show', $street->id) }}"> {{ $street->deleted_at }}</a></td>
 
                     </tr>
                 @endforeach
@@ -60,8 +67,9 @@
 
     </div>
 
-    <div>
-        <a href="{{ route('admin.message.create') }}">Add One</a>
+    <!-- <div>
+            <a href="{{ route('street.create') }}">Add One</a>
 
-    </div>
+        </div>
+    -->
 @endsection

@@ -48,6 +48,25 @@
                   </p>
               </a>
           </li>
+          <li class="nav-item">
+              <a href="{{ route('admin.message.index') }}" class="nav-link">
+                  <i class="nav-icon fas fa-align-justify"></i>
+                  <p>
+                      Message
+                      <span class="badge badge-info right">.</span>
+                  </p>
+              </a>
+          </li>
+          <li class="nav-item">
+              <a href="{{ route('admin.numerology.index') }}" class="nav-link">
+                  <i class="nav-icon fas fa-align-justify"></i>
+                  <p>
+                      Numerology
+                      <span class="badge badge-info right">.</span>
+                  </p>
+              </a>
+          </li>
+
 
 
           <li class="nav-item">

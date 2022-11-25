@@ -1,5 +1,5 @@
 
-@extends('layouts.main')
+@extends('layouts.admin')
 @section('content')
 <div>
   <table class="table table-hover" id="serch-table">
@@ -25,11 +25,11 @@
   </tbody>
 </table>
 <div>
-        <a href="{{route('message.edit', $message->id)}}">Edit</a>
+        <a href="{{route('admin.message.edit', $message->id)}}">Edit</a>
 
 </div>
 <div>
-    <form action="{{route('message.destroy', $message->id)}}" method ='post'>
+    <form action="{{route('admin.message.destroy', $message->id)}}" method ='post'>
       @csrf
       @method('delete')
       <input type= 'submit' value="Delete">
@@ -38,7 +38,7 @@
 </div>
     
 <div>
-        <a href="{{route('message.index')}}">Back</a>
+        <a href="{{route('admin.message.index')}}">Back</a>
 
  </div>
     

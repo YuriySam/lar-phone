@@ -48,6 +48,7 @@ class OPhoneController extends Controller
 
 		return view('ophones.show', compact('ophone'));
 	}
+	
 
 	public function edit(Ophone $ophone)
 	{

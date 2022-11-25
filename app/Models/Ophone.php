@@ -29,4 +29,8 @@ class Ophone extends Model
     {
         return $this->belongsTo(Func::class, 'func_id', 'id');
     }
+    public function street()
+    {
+        return $this->belongsTo(Street::class, 'strid', 'id');
+    }
 }

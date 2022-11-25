@@ -149,6 +149,26 @@ Route::group(['namespace' =>'Admin' ], function () {
         Route::patch('/func/{func}',    'UpdateController')->   name('admin.func.update');
         Route::delete('/func/{func}',   'DestroyController')->  name('admin.func.destroy');
     });
+    
+    Route::group(['namespace' => 'Message', 'prefix' => 'admin', 'middleware' => 'admin'], function () {
+        Route::get('/message',                  'IndexController')->    name('admin.message.index');
+        Route::get('/message/create',           'CreateController')->   name('admin.message.create');
+        Route::post('/message',                 'StoreController')->    name('admin.message.store');
+        Route::get('/message/{message}',        'ShowController')->     name('admin.message.show');
+        Route::get('/message/{message}/edit',   'EditController')->     name('admin.message.edit');
+        Route::patch('/message/{message}',      'UpdateController')->   name('admin.message.update');
+        Route::delete('/message/{message}',     'DestroyController')->  name('admin.message.destroy');
+    });
+    Route::group(['namespace' => 'Numerology', 'prefix' => 'admin', 'middleware' => 'admin'], function () {
+        Route::get(     '/numerology',                  'IndexController')->name('admin.numerology.index');
+        Route::get(     '/numerology/create',           'CreateController')->name('admin.numerology.create');
+        Route::post(    '/numerology',                 'StoreController')->name('admin.numerology.store');
+        Route::get(     '/numerology/{numerology}',        'ShowController')->name('admin.numerology.show');
+        Route::get(     '/numerology/{numerology}/edit',   'EditController')->name('admin.numerology.edit');
+        Route::patch(   '/numerology/{numerology}',      'UpdateController')->name('admin.numerology.update');
+        Route::delete(  '/numerology/{numerology}',     'DestroyController')->name('admin.numerology.destroy');
+    });
+    
 
     
 });

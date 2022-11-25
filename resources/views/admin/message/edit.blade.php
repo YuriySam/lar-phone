@@ -1,8 +1,8 @@
 
-@extends('layouts.main')
+@extends('layouts.admin')
 @section('content')
     <div>
-        <form action="{{route('message.update', $message->id)}}" method= "post">
+        <form action="{{route('admin.message.update', $message->id)}}" method= "post">
             @csrf
             @method('patch')
             <div class="mb-3">
@@ -19,7 +19,7 @@
         
     </div>
     <div>
-        <a href="{{route('message.update', $message->id )}}">Back</a>
+        <a href="{{route('admin.message.update', $message->id )}}">Back</a>
     </div> 
 
 
