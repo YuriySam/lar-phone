@@ -121,7 +121,8 @@ Route::group(['namespace' =>'Admin' ], function () {
     });
 
     Route::group(['namespace' => 'Ophone', 'prefix' => 'admin', 'middleware' => 'admin'], function () {
-        Route::get(     '/ophone',            'IndexController')->  name('admin.ophone.index');
+        Route::get('/ophone',            'IndexController')->name('admin.ophone.index');
+        Route::get('/ophone/birthday',            'BirthdayController')->name('admin.ophone.birthday');
         Route::get(     '/ophone/create', 'CreateController')->     name('admin.ophone.create');
         Route::post(    '/ophone', 'StoreController')->             name('admin.ophone.store');
         Route::get(     '/ophone/{ophone}', 'ShowController')->     name('admin.ophone.show');
@@ -160,15 +161,24 @@ Route::group(['namespace' =>'Admin' ], function () {
         Route::delete('/message/{message}',     'DestroyController')->  name('admin.message.destroy');
     });
     Route::group(['namespace' => 'Numerology', 'prefix' => 'admin', 'middleware' => 'admin'], function () {
-        Route::get(     '/numerology',                  'IndexController')->name('admin.numerology.index');
-        Route::get(     '/numerology/create',           'CreateController')->name('admin.numerology.create');
-        Route::post(    '/numerology',                 'StoreController')->name('admin.numerology.store');
-        Route::get(     '/numerology/{numerology}',        'ShowController')->name('admin.numerology.show');
-        Route::get(     '/numerology/{numerology}/edit',   'EditController')->name('admin.numerology.edit');
-        Route::patch(   '/numerology/{numerology}',      'UpdateController')->name('admin.numerology.update');
-        Route::delete(  '/numerology/{numerology}',     'DestroyController')->name('admin.numerology.destroy');
+        Route::get('/numerology',                  'IndexController')->name('admin.numerology.index');
+        Route::get('/numerology/create',           'CreateController')->name('admin.numerology.create');
+        Route::post('/numerology',                 'StoreController')->name('admin.numerology.store');
+        Route::get('/numerology/{numerology}',        'ShowController')->name('admin.numerology.show');
+        Route::get('/numerology/{numerology}/edit',   'EditController')->name('admin.numerology.edit');
+        Route::patch('/numerology/{numerology}',      'UpdateController')->name('admin.numerology.update');
+        Route::delete('/numerology/{numerology}',     'DestroyController')->name('admin.numerology.destroy');
     });
-    
+    Route::group(['namespace' => 'Office', 'prefix' => 'admin', 'middleware' => 'admin'], function () {
+        Route::get('/office',                  'IndexController')->name('admin.office.index');
+        Route::get('/office/create',           'CreateController')->name('admin.office.create');
+        Route::post('/office',                 'StoreController')->name('admin.office.store');
+        Route::get('/office/{office}',        'ShowController')->name('admin.office.show');
+        Route::get('/office/{office}/edit',   'EditController')->name('admin.office.edit');
+        Route::patch('/office/{office}',      'UpdateController')->name('admin.office.update');
+        Route::delete('/office/{office}',     'DestroyController')->name('admin.office.destroy');
+    });
+        
 
     
 });

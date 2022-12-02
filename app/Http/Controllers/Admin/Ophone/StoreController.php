@@ -21,6 +21,7 @@ class StoreController extends Controller
 			'surname' => 'string',
 			'name' => 'string',
 			'patronymic' => 'string',
+			'birthday' => 'nullable|date',
 			'funid' => 'integer',
 			'branid' => 'integer',
 			'offid' => 'integer'

@@ -18,15 +18,22 @@ class UpdateController extends Controller
 	public function __invoke(Ophone $ophone)
 	{
 
+
+		//dd($ophone);
 		$data = request()->validate([
 			'number' => 'string',
 			'number1' => 'string',
 			'surname' => 'string',
 			'name' => 'string',
 			'patronymic' => 'string',
-			'funid' => 'integer',
-			'branid' => 'integer',
-			'offid' => 'integer'
+			'func_id' => 'integer',
+			'branch_id' => 'integer',
+			'offid' => 'integer',
+			'strid' => 'integer',
+			'house' => 'string',
+			'flat' => 'string',
+			'userMail' => 'email|nullable',
+
 		]);
 		//dd($data);
 		$ophone->update($data);

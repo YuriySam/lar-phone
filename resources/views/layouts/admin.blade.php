@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ua">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AdminLTE 3 | Dashboard</title>
+    <title>|Admin</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -48,11 +48,10 @@
                             class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="#" class="nav-link">Dashboard</a>
+                    <a href="{{ route('admin.ophone.index') }}" class="nav-link">Довідник</a>
                 </li>
-                
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="#" class="nav-link">Contact</a>
+                    <a href="#" class="nav-link">Листи Накази</a>
                 </li>
             </ul>
 
@@ -225,7 +224,7 @@
                 <!-- Sidebar Menu -->
 
 
-                @include('includes.admin.sidebar');
+                @include('includes.admin.ophone.sidebar');
 
 
                 <!-- /.sidebar-menu -->
@@ -243,12 +242,12 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Dashboard</h1>
+                            <h1 class="m-0"> Центр ШМД та МК</h1>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-                                <li class="breadcrumb-item active">Dashboard v1</li>
+                                <li class="breadcrumb-item"><a href="#"> </a>_</li>
+                                <li class="breadcrumb-item active"> _</li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
@@ -316,7 +315,8 @@
     <!-- AdminLTE App -->
     <script src="{{ asset('dist/js/adminlte.js') }}"></script>
     <!-- AdminLTE for demo purposes -->
-    <script src="{{ asset('dist/js/demo.js') }}"></script>
+    <!--<script src=" /*asset('dist/js/demo.js')*/ "></script>-->
+    <script src="#"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="{{ asset('dist/js/pages/dashboard.js') }}"></script>
 </body>

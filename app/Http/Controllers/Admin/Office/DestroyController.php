@@ -1,21 +1,21 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Category;
+namespace App\Http\Controllers\Admin\Office;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-use App\Models\Post;
+use App\Models\Office;
 use App\Models\Category;
 use App\Models\Tag;
 use App\Models\PostTag;
 
 class DestroyController extends Controller
 {
-    public function __invoke(Category $category)
+    public function __invoke(Office $office)
     {
-        $category->delete();
+        $office->delete();
 
-        return redirect()->route('admin.category.index');
+        return redirect()->route('admin.office.index');
     }
 }

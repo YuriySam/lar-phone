@@ -14,4 +14,5 @@ class Branch extends Model
 
     protected $table = 'branches'; //table to BD
     protected $guarded = []; //список захищених для заповнення полів БД пустий
+    
 }

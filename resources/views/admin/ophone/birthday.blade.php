@@ -35,13 +35,13 @@
         <table class="table table-hover" id="serch-table">
             <thead>
                 <tr>
-                    <th scope="col">ПІБ</th>
+                    <th scope="col">Дата ноародження</th>
+                    <th scope="col">Повних років</th>
                     <th scope="col">Посада</th>
                     <th scope="col">Відділ</th>
                     <th scope="col">ВАТС</th>
                     <th scope="col">МАТС</th>
                     <th scope="col">Ел.Пошта</th>
-                    <th scope="col">Адреса</th>
                 </tr>
             </thead>
 
@@ -49,20 +49,17 @@
 
             <tbody>
 
-                @foreach ($ophones as $ophone)
+                @foreach ($ophonesBirthdayToday as $birthdayToday)
                     <tr>
 
-                        <td> <a href="{{ route('admin.ophone.show', $ophone->id) }}"> {{ $ophone->surname }}
-                                {{ $ophone->name }}
-                                {{ $ophone->patronymic }}</a> </td>
-                        <td> <a href="{{ route('admin.ophone.show', $ophone->id) }}"> {{ $ophone->func->func }} </a></td>
-                        <td> <a href="{{ route('admin.ophone.show', $ophone->id) }}"> {{ $ophone->branch->branch }}</a></td>
-                        <th> <a href="{{ route('admin.ophone.show', $ophone->id) }}"> {{ $ophone->number }}</a></th>
-                        <th> <a href="{{ route('admin.ophone.show', $ophone->id) }}"> {{ $ophone->number1 }}</a></th>
-                        <th> <a href="{{ route('admin.ophone.show', $ophone->id) }}"> {{ $ophone->userMail }}</a></th>
-                        <th> <a href="{{ route('admin.ophone.show', $ophone->id) }}"> {{ $ophone->street->town_pre }}
-                                {{ $ophone->street->town }} {{ $ophone->street->street_pre }}
-                                {{ $ophone->street->street }} {{ $ophone->house }}, каб. {{ $ophone->flat }} </a></th>
+                        <td> <a href="{{ route('admin.ophone.show', $birthdayToday->id) }}">{{ $birthdayToday->birthday }}</a> </td>
+                        <td> <a href="{{ route('admin.ophone.show', $birthdayToday->id) }}">{{ $birthdayToday->old }}</a> </td>
+                        <td> <a href="{{ route('admin.ophone.show', $birthdayToday->id) }}">{{ $birthdayToday->surname }} {{ $birthdayToday->name }} {{ $birthdayToday->patronymic }}</a> </td>
+                        <td> <a href="{{ route('admin.ophone.show', $birthdayToday->id) }}">{{ $birthdayToday->func->func }}</a></td>
+                        <td> <a href="{{ route('admin.ophone.show', $birthdayToday->id) }}">{{ $birthdayToday->branch->branch }}</a></td>
+                        <th> <a href="{{ route('admin.ophone.show', $birthdayToday->id) }}">{{ $birthdayToday->number }}</a></th>
+                        <th> <a href="{{ route('admin.ophone.show', $birthdayToday->id) }}">{{ $birthdayToday->number1 }}</a></th>
+                        <th> <a href="{{ route('admin.ophone.show', $birthdayToday->id) }}">{{ $birthdayToday->userMail }}</a></th>
 
                     </tr>
                 @endforeach
@@ -75,7 +72,7 @@
 
 
     <div>
-        this is phone page (admin.ophone.blade)
+        this is phone page (admin.ophone.birthday.blade)
 
 
 

@@ -30,7 +30,7 @@ class CreateOphonesTable extends Migration
             $table->string('flat', '7');
             $table->string('note', '250');
             $table->string('sortindex')->nullable();            
-            $table->text('userMail','50');
+            $table->text('userMail','50')->nullable();
 			
             $table->timestamps();
             

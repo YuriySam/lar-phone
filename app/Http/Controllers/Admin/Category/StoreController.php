@@ -17,6 +17,6 @@ class StoreController extends Controller
     {
         $data = $request->validated();
         Category::create($data);
-        return redirect()->route('category.index');
+        return redirect()->route('admin.category.index');
     }
 }

@@ -7,7 +7,7 @@
               <a href="{{ route('admin.post.index') }}" class="nav-link">
                   <i class="nav-icon fas fa-align-justify"></i>
                   <p>
-                      Post
+                      Post --- 
                       <span class="badge badge-info right">.</span>
                   </p>
               </a>
