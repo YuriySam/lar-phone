@@ -20,17 +20,14 @@
         <!-- /.content-header -->
         
     <div>
-        <form action="{{route('admin.func.update', $func->id)}}" method= "post">
+        <form action="{{route('admin.category.update', $category->id)}}" method= "post">
             @csrf
             @method('patch')
             <div class="mb-3">
-                <label for="func" class="form-label">func</label>
-                <input type="text" name= "func" class="form-control" id="func" placeholder="func" value="{{$func->func}}">
+                <label for="title" class="form-label">category title</label>
+                <input type="text" name= "title" class="form-control" id="title" placeholder="category title" value="{{$category->title}}">
             </div>
-            <div class="mb-3">
-                <label for="funindex" class="form-label">funindex</label>
-                <input type="text" name= "funindex" class="form-control" id="funindex" placeholder="funindex" value="{{$func->funindex}}">
-            </div>
+            
             
             
             <div class="mb-3">
@@ -40,7 +37,7 @@
         
     </div>
     <div>
-        <a href="{{route('admin.func.update', $func->id )}}">Back</a>
+        <a href="{{route('admin.category.update', $category->id )}}">Back</a>
     </div> 
 
 

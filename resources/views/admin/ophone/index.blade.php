@@ -1,5 +1,23 @@
 @extends('layouts.admin')
 @section('content')
+<!-- Content Header (Page header) -->
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1 class="m-0"> ---</h1>
+                        </div><!-- /.col -->
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="#"> </a>_</li>
+                                <li class="breadcrumb-item active"> _</li>
+                            </ol>
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+                </div><!-- /.container-fluid -->
+            </div>
+        <!-- /.content-header -->
+        
     <div>
 
 
@@ -42,6 +60,7 @@
                     <th scope="col">МАТС</th>
                     <th scope="col">Ел.Пошта</th>
                     <th scope="col">Адреса</th>
+                    <th scope="col">Примітки</th>
                 </tr>
             </thead>
 
@@ -63,7 +82,8 @@
                         <th> <a href="{{ route('admin.ophone.show', $ophone->id) }}"> {{ $ophone->street->town_pre }}
                                 {{ $ophone->street->town }} {{ $ophone->street->street_pre }}
                                 {{ $ophone->street->street }} {{ $ophone->house }}, каб. {{ $ophone->flat }} </a></th>
-
+                        <th> <a href="{{ route('admin.ophone.show', $ophone->id) }}"> {{ $ophone->note }}</a></th>
+                        
                     </tr>
                 @endforeach
 

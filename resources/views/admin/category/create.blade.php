@@ -1,7 +1,7 @@
 
 @extends('layouts.admin')
 @section('content')
-<!-- Content Header (Page header) -->
+        <!-- Content Header (Page header) -->
             <div class="content-header">
                 <div class="container-fluid">
                     <div class="row mb-2">
@@ -18,30 +18,22 @@
                 </div><!-- /.container-fluid -->
             </div>
         <!-- /.content-header -->
-        
     <div>
-        <form action="{{route('admin.func.update', $func->id)}}" method= "post">
+        <form action="{{route('admin.category.store')}}" method= "post">
             @csrf
-            @method('patch')
             <div class="mb-3">
-                <label for="func" class="form-label">func</label>
-                <input type="text" name= "func" class="form-control" id="func" placeholder="func" value="{{$func->func}}">
+                <label for="title" class="form-label">category title</label>
+                <input type="text" name= "title" class="form-control" id="title" placeholder="category title" >
             </div>
-            <div class="mb-3">
-                <label for="funindex" class="form-label">funindex</label>
-                <input type="text" name= "funindex" class="form-control" id="funindex" placeholder="funindex" value="{{$func->funindex}}">
-            </div>
-            
+           
             
             <div class="mb-3">
-            <button type="submit" class="btn btn-primary mb-3">Update</button>      
+            <button type="submit" class="btn btn-primary mb-3">Додати</button>      
             </div>
         </form> 
         
     </div>
-    <div>
-        <a href="{{route('admin.func.update', $func->id )}}">Back</a>
-    </div> 
+
 
 
 @endsection

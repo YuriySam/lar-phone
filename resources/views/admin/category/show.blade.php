@@ -1,6 +1,7 @@
 
-@extends('layouts.main')
+@extends('layouts.admin')
 @section('content')
+
 <!-- Content Header (Page header) -->
             <div class="content-header">
                 <div class="container-fluid">
@@ -24,23 +25,28 @@
   <thead>
     <tr>
 
-      <th scope="col">quote</th>
-     
+      <th scope="col">title</th>
+      <th scope="col">created_at</th>
+      <th scope="col">updated_at</th>
+      <th scope="col">deleted_at</th>
     </tr>
   </thead>
   <tbody>
       <tr>
-            <th> {{$quote->quote}}</th>
-            
+            <th> {{$category->title}}</th>
+            <td> {{$category->created_at}} </td>
+            <td> {{$category->updated_at}}</td>
+            <td> {{$category->deleted_at}}</td>
+          
       </tr>
   </tbody>
 </table>
 <div>
-        <a href="{{route('quote.edit', $quote->id)}}">Edit</a>
+        <a href="{{route('admin.category.edit', $category->id)}}">Edit</a>
 
 </div>
 <div>
-    <form action="{{route('quote.destroy', $quote->id)}}" method ='post'>
+    <form action="{{route('admin.category.destroy', $category->id)}}" method ='post'>
       @csrf
       @method('delete')
       <input type= 'submit' value="Delete">
@@ -49,7 +55,7 @@
 </div>
     
 <div>
-        <a href="{{route('quote.index')}}">Back</a>
+        <a href="{{route('admin.category.index')}}">Back</a>
 
  </div>
     

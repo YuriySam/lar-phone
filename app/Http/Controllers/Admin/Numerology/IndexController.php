@@ -9,6 +9,7 @@ class IndexController extends Controller
 {
     public function __invoke()
     {
+        
         $numerologis = Numerology::all();
         
         return view('admin.numerology.index', compact('numerologis'));

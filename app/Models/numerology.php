@@ -13,8 +13,12 @@ class numerology extends Model
 
     use SoftDeletes; //для м'кого видалення 2(2)
 
+    protected $dateCalculate;//дата для розрахунку передбачення
+
     protected $table = 'numerologies'; //table to BD
     //protected $guarded = []; //список захищених для заповнення полів БД пустий
     protected $guarded = false; //зняття захисту для заповнення полів БД
+
+    
    
 }

@@ -163,11 +163,14 @@ Route::group(['namespace' =>'Admin' ], function () {
     Route::group(['namespace' => 'Numerology', 'prefix' => 'admin', 'middleware' => 'admin'], function () {
         Route::get('/numerology',                  'IndexController')->name('admin.numerology.index');
         Route::get('/numerology/create',           'CreateController')->name('admin.numerology.create');
+        Route::get('/numerology/calculate',           'CalculateController')->name('admin.numerology.calculate');
         Route::post('/numerology',                 'StoreController')->name('admin.numerology.store');
+        Route::post('/numerology',                 'CalculateSetController')->name('admin.numerology.calculateset');
         Route::get('/numerology/{numerology}',        'ShowController')->name('admin.numerology.show');
         Route::get('/numerology/{numerology}/edit',   'EditController')->name('admin.numerology.edit');
         Route::patch('/numerology/{numerology}',      'UpdateController')->name('admin.numerology.update');
         Route::delete('/numerology/{numerology}',     'DestroyController')->name('admin.numerology.destroy');
+        
     });
     Route::group(['namespace' => 'Office', 'prefix' => 'admin', 'middleware' => 'admin'], function () {
         Route::get('/office',                  'IndexController')->name('admin.office.index');

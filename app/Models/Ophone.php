@@ -14,28 +14,34 @@ class Ophone extends Model
 {
     use HasFactory;
     use Filterable;
-    //use SoftDeletes; //для м'кого видалення 2(2)
-    
+    //для відображення сайтбару на Адмінсторінці 
+    protected $ssideBar= 'includes.admin.ophone.sidebar';
+    //dd($SESSION);
     //use SoftDeletes; //для м'кого видалення 2(2)
 
     protected $table = 'ophones'; //table to BD
     //protected $guarded = []; //список захищених для заповнення полів БД пустий
     protected $guarded = false; //зняття захисту для заповнення полів БД
     
-
+    //додамо зв'язок з відділом
     public function branch()
     {
         return $this->belongsTo(Branch::class, 'branch_id', 'id');
     }
+
+    //додамо зв'язок з посадою
     public function func()
     {
         return $this->belongsTo(Func::class, 'func_id', 'id');
     }
+
+    //додамо зв'язок з адресою
     public function street()
     {
         return $this->belongsTo(Street::class, 'strid', 'id');
     }
 
+    //знайдемо дні народження за період (допоміжний метод для пошуку ДН на тиждень вперед)
     public function scopeBirthDayBetween($query, Carbon $from, Carbon $till)
     {
         $fromMonthDay = $from->format('m-d');
@@ -53,4 +59,34 @@ class Ophone extends Model
 
         
     }
+
+
+//знайдемо дні народження на тиждень вперед
+	public function	getBirthday7day(){
+        $ophonesBirthdayToday = Ophone::query()
+		->birthDayBetween(Carbon::now(), Carbon::now()->addWeek())
+		->orderByRaw("DATE_FORMAT(birthday,'%m%d')")
+		->orderByRaw("DATE_FORMAT(birthday,'%y') desc")
+			->orderBy('surname')
+			->get();
+           
+
+		return $ophonesBirthdayToday;
+	}
+
+    //обрахуємо для кожного запису з Днем народження вік
+    public function getOld()
+    {
+        $old = Carbon::parse($this->birthday)->age;
+        return $old;
+    }
+
+    //покажемо данні тільки по обраному відділу
+    public function scopeOfBranch($query, $branch)
+    {
+        return $query->where('branch', $branch);
+    }
+
+
+
 }

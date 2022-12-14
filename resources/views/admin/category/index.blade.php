@@ -52,8 +52,7 @@
         <table class="table table-hover" id="serch-table">
   <thead>
     <tr>
-      <th scope="col">func</th>
-      <th scope="col">funindex</th>
+      <th scope="col">title</th>
       <th scope="col">created_at</th>
       <th scope="col">updated_at</th>
       <th scope="col">deleted_at</th>
@@ -65,14 +64,13 @@
 
   <tbody>
 
-    @foreach($funcs as $func)
+    @foreach($categories as $category)
         <tr>
             
-                <th> <a href="{{route('admin.func.show', $func->id)}}"> {{$func->func}}</a> </th>
-                <th> <a href="{{route('admin.func.show', $func->id)}}"> {{$func->funindex}}</a></th>
-                <td> <a href="{{route('admin.func.show', $func->id)}}"> {{$func->created_at}} </a></td>
-                <td> <a href="{{route('admin.func.show', $func->id)}}"> {{$func->updated_at}}</a></td>
-                <td> <a href="{{route('admin.func.show', $func->id)}}"> {{$func->deleted_at}}</a></td>
+                <th> <a href="{{route('admin.category.show', $category->id)}}"> {{$category->title}}</a> </th>
+                <td> <a href="{{route('admin.category.show', $category->id)}}"> {{$category->created_at}} </a></td>
+                <td> <a href="{{route('admin.category.show', $category->id)}}"> {{$category->updated_at}}</a></td>
+                <td> <a href="{{route('admin.category.show', $category->id)}}"> {{$category->deleted_at}}</a></td>
                 
         </tr>
   
@@ -84,7 +82,7 @@
     </div>
 
    <div>
-        <a href="{{route('admin.func.create')}}">Add One</a>
+        <a href="{{route('admin.category.create')}}">Add One</a>
 
     </div>
 @endsection

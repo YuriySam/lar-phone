@@ -13,7 +13,8 @@ class IndexController extends Controller
 	{
 		
 		//$ophones = Ophone::sortable(['Price' => 'desc'])->get();
-		$ophones = Ophone::all();
+		$ophones = Ophone::orderBy('sortindex', 'asc')->get();//сортування за зростанням
+		//$ophones = Ophone::all();
 		//$streets = Street::All();
 		return view('admin.ophone.index', compact('ophones'));
 	}

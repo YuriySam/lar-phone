@@ -13,8 +13,9 @@ class OPhoneController extends Controller
 	public function index()
 	{
 		
-		//$ophones = Ophone::sortable(['Price' => 'desc'])->get();
-		$ophones = Ophone::all();
+		//$ophones = Ophone::sortable(['sortindex' => 'desc'])->get();
+		//$ophones = Ophone::all();
+		$ophones = Ophone::orderBy('sortindex', 'asc')->get();//сортування за зростанням
 		return view('ophones.index', compact('ophones'));
 	}
 

@@ -1,5 +1,23 @@
 @extends('layouts.admin')
 @section('content')
+<!-- Content Header (Page header) -->
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1 class="m-0"> ---</h1>
+                        </div><!-- /.col -->
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="#"> </a>_</li>
+                                <li class="breadcrumb-item active"> _</li>
+                            </ol>
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+                </div><!-- /.container-fluid -->
+            </div>
+        <!-- /.content-header -->
+        
     <div>
 
 
@@ -49,11 +67,11 @@
 
             <tbody>
 
-                @foreach ($ophonesBirthdayToday as $birthdayToday)
+                @foreach ($birthdayFrom7Days as $birthdayToday)
                     <tr>
-
+                       
                         <td> <a href="{{ route('admin.ophone.show', $birthdayToday->id) }}">{{ $birthdayToday->birthday }}</a> </td>
-                        <td> <a href="{{ route('admin.ophone.show', $birthdayToday->id) }}">{{ $birthdayToday->old }}</a> </td>
+                        <td> <a href="{{ route('admin.ophone.show', $birthdayToday->id) }}">{{ $birthdayToday->getOld() }}</a> </td>
                         <td> <a href="{{ route('admin.ophone.show', $birthdayToday->id) }}">{{ $birthdayToday->surname }} {{ $birthdayToday->name }} {{ $birthdayToday->patronymic }}</a> </td>
                         <td> <a href="{{ route('admin.ophone.show', $birthdayToday->id) }}">{{ $birthdayToday->func->func }}</a></td>
                         <td> <a href="{{ route('admin.ophone.show', $birthdayToday->id) }}">{{ $birthdayToday->branch->branch }}</a></td>

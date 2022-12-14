@@ -5,13 +5,14 @@ namespace App\Http\Controllers\Admin\Numerology;
 use App\Http\Controllers\Controller;
 use App\Models\numerology;
 
-class CreateController extends Controller
+class CalculateController extends Controller
 {
     public function    __invoke()
     {
+       
 
-        //dd(44444444444444);
-        return view('admin.numerology.create');
+        
+        return view('admin.numerology.calculate');
     }
 
 }
