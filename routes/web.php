@@ -189,3 +189,13 @@ Route::group(['namespace' =>'Admin' ], function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::group(['namespace' => 'Appeal'], function () {
+    Route::get(      '/appeal',          'IndexController'   )->name('appeal.index');
+    Route::get(      '/appeal/create',  'CreateController'   )->name('appeal.create');
+    Route::post(     '/appeal', 'StoreController'            )->name('appeal.store');
+    Route::get(      '/appeal/{appeal}', 'ShowController'    )->name('appeal.show');
+//     // Route::get(      '/appeal/{appeal}/edit','EditController')->name('appeal.edit');
+//     // Route::patch(    '/appeal/{appeal}', 'UpdateController'  )->name('appeal.update');
+//     // Route::delete(   '/appeal/{appeal}', 'DestroyController' )->name('appeal.destroy');
+ });

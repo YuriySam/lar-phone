@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
+{{-- {{dd('admin.post.index.blade')}} --}}
 <!-- Content Header (Page header) -->
             <div class="content-header">
                 <div class="container-fluid">

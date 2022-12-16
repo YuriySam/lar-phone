@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Post;
+namespace App\Http\Controllers\Appeal;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Post\FilterRequest;
 
-use App\Models\Post;
+use App\Models\Appeal;
 use App\Models\Category;
 use App\Models\Tag;
 use App\Models\PostTag;
@@ -13,6 +13,7 @@ use App\Models\PostTag;
 class IndexController extends BaseController
 {
 
+      
     //public function __invoke()
     /*
     //повинен працювати для всіх записів
@@ -63,8 +64,9 @@ class IndexController extends BaseController
 
     public function __invoke()
     {
-        $posts = Post::all();
-        return view('post.index', compact('posts'));
+        //dd('appeal.IndexController');
+        $appeals = Appeal::all();
+        return view('appeal.index', compact('appeals'));
     }
 
 }

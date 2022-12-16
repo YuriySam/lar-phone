@@ -1,6 +1,7 @@
 
 @extends('layouts.main')
 @section('content')
+{{-- {{dd('  post.index.blade')}} --}}
 <div>
         <!-- for serch item began-->
             <script>
