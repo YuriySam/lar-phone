@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class numerology extends Model
+class Numerology extends Model
 {
     use HasFactory;
 

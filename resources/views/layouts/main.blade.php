@@ -23,17 +23,17 @@
             </div>
         </nav>
             <div class="container-fluid">
-                <a class="navbar-brand" href="{{ route('ophone.index') }}">Довідник</a>
+                <a class="navbar-brand" href="{{ route('ophone.index') }}"><b>Довідник</b></a>
                 <!--<a class="navbar-brand" href="{{ route('branch.index') }}">Відділ(Branch)</a>-->
                 <!--`<a class="navbar-brand" href="{{ route('func.index') }}">Посада(Func)</a>-->
-                <a class="navbar-brand" href="{{ route('message.index') }}">Помилки які виправляються</a>
+                {{-- <a class="navbar-brand" href="{{ route('message.index') }}">Помилки які виправляються</a> --}}
                 <!--<a class="navbar-brand" href="{{ route('quote.index') }}">Мудрі вислови(Quote)</a>-->
                 <!--<a class="nav-link "href="{{ route('about.index') }}">About</a>-->
-                <a class="navbar-brand" href="{{ route('post.index') }}">Post</a>
-                <a class="navbar-brand" href="{{ route('appeal.index') }}">Appeal</a>
-                <!--<a class="navbar-brand" href="{{ route('category.index') }}">Category</a> -->
+                {{-- <a class="navbar-brand" href="{{ route('post.index') }}">Post</a> --}}
+                <a class="navbar-brand" href="{{ route('appeal.index') }}"><b>Appeal</b></a>
+                {{-- <!--<a class="navbar-brand" href="{{ route('category.index') }}">Category</a> --> --}}
                 {{-- <a class="navbar-brand" href="{{ route('tag.index') }}">Tag</a> --}}
-                -->
+                 <a class="navbar-brand" href="{{ route('message.create') }}">Є помилка? Додай запит на виправлення.</a>
                 <div class="info">
                     
                     @if (isset(auth()->user()->name))
@@ -45,7 +45,7 @@
             </div>
 
         </nav>
-        <a href="{{ route('message.create') }}">Є помилка? Додай запит на виправлення.</a>
+       
     </div>
     <div>
         @yield('content')

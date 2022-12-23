@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Appeal;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Post\UpdateRequest;
+use App\Http\Requests\Appeal\UpdateRequest;
 use Illuminate\Http\Request;
 
 use App\Models\Appeal;
@@ -15,11 +15,12 @@ class UpdateController extends BaseController
 {
     public function __invoke(UpdateRequest $request, Appeal $appeal)
     {
-          dd('appeal.UpdateController');
+        //   dd('appeal.UpdateController');
         $data = $request->validated();
 
         $this->service->update($appeal, $data);
         
-        return redirect()->route('post.show', $appeal->id);        
+        // return redirect()->route('appeal.show', $appeal->id);
+        return redirect()->route('appeal.index');        
     }
 }

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class office extends Model
+class Office extends Model
 {
     use HasFactory;//за замовчанням
 

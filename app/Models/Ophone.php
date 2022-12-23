@@ -26,13 +26,13 @@ class Ophone extends Model
     //додамо зв'язок з відділом
     public function branch()
     {
-        return $this->belongsTo(Branch::class, 'branch_id', 'id');
+        return $this->belongsTo(Branch::class, 'branid', 'id');
     }
 
     //додамо зв'язок з посадою
     public function func()
     {
-        return $this->belongsTo(Func::class, 'func_id', 'id');
+        return $this->belongsTo(Func::class, 'funid', 'id');
     }
 
     //додамо зв'язок з адресою

@@ -24,7 +24,7 @@
                     <li class="nav-item">
                       <a href="{{ route('admin.office.index') }}" class="nav-link">
                           <i class="far fa-circle nav-icon"></i>
-                          <p>Office</p>
+                          <p> <b>Office (multi)</b></p>
                       </a>
                   </li>
                   <li class="nav-item">
@@ -43,6 +43,12 @@
                       <a href="{{ route('admin.message.index') }}" class="nav-link">
                           <i class="far fa-circle nav-icon"></i>
                           <p>Message</p>
+                      </a>
+                  </li>
+                   <li class="nav-item">
+                      <a href="{{ route('admin.street.index') }}" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Address street</p>
                       </a>
                   </li>
                     <li class="nav-item">
@@ -131,11 +137,55 @@
                       </a>
                   </li>
                   <li class="nav-item">
-                      <a href="{{ route('admin.category.index') }}" class="nav-link">
+                      <a href="{{ route('admin.type_docum.index') }}" class="nav-link">
                           <i class="far fa-circle nav-icon"></i>
-                          <p>Виконавці</p>
+                          <p>type_docum</p>
                       </a>
                   </li>
+                  <li class="nav-item">
+                      <a href="{{ route('admin.question_docum.index') }}" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Порушені питання тип (question_docum)</p>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="{{ route('admin.office.index') }}" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p> <b>Office (multi)</b></p>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="{{ route('admin.amount_docum.index') }}" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>amount_docum</p>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="{{ route('admin.content_resolution.index') }}" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Зміст резолюції розгляд відповідь/розгляд/ не за адресою/ (content_resolution)</p>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="{{ route('admin.ophone.index') }}" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p><b>Автор резолюції (avtor_resolutions) (multi)</b></p>
+                      </a>
+                  </li>
+
+                  <li class="nav-item">
+                      <a href="{{ route('admin.title_implementation.index') }}" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Результат розгляду (title_implementation_id)</p>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="{{ route('admin.validity.index') }}" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Обгрунтованість (validity)</p>
+                      </a>
+                  </li>
+
                   <li class="nav-item">
                       <a href="{{ route('admin.category.index') }}" class="nav-link">
                           <i class="far fa-circle nav-icon"></i>

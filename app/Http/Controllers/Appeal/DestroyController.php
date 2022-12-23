@@ -14,10 +14,10 @@ class DestroyController extends BaseController
 {
     public function __invoke(Appeal $appeal)
     {
-          dd('appeal.DestroyController');
+        //   dd('appeal.DestroyController');
         
         $appeal->delete();
 
-        return redirect()->route('post.index');
+        return redirect()->route('appeal.index');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAddressesTable extends Migration
+class CreateTypeDocumsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,19 +13,15 @@ class CreateAddressesTable extends Migration
      */
     public function up()
     {
-        Schema::create('addresses', function (Blueprint $table) {
+        Schema::create('type_docums', function (Blueprint $table) {
             $table->id();
 
-            $table->string('town_pre', '10');
-            $table->string('town', '50');
-            $table->string('street_pre', '20');
-            $table->string('street', '50');
-            $table->string('house', '8');
-            $table->string('flat', '7');
+            $table->string('title', '50')->nullable();  //Вид документа скарга/подяка/запит/пропозиція
+            $table->bigInteger('user_id')->default('1'); //Хто редагував з довідника
+            
 
             $table->timestamps();
             $table->softDeletes(); //м'яке водалення записів з таблиці
-            
         });
     }
 
@@ -36,6 +32,6 @@ class CreateAddressesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('addresses');
+        Schema::dropIfExists('type_docums');
     }
 }

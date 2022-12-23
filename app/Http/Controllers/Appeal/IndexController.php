@@ -64,7 +64,7 @@ class IndexController extends BaseController
 
     public function __invoke()
     {
-        //dd('appeal.IndexController');
+        // dd('appeal.IndexController');
         $appeals = Appeal::all();
         return view('appeal.index', compact('appeals'));
     }

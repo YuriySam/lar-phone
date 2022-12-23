@@ -93,7 +93,7 @@
                         @error('address_txt')
                         <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
-</div> --}}
+                            </div> --}}
 
                             <div class="mb-3">
                                 <label for="phone_reg" class="form-label">Номер телефону заявника (phone_reg)</label>
@@ -118,10 +118,10 @@
                             {{-- <div class="mb-3">
                         <label for="type_docum_txt" class="form-label">Вид документа скарга/подяка/запит/пропозиція (type_docum_txt)</label>
                         <input type="text" name= "type_docum_txt"class="form-control" id="type_docum_txt" placeholder="Вид документа скарга/подяка/запит/пропозиція (type_docum_txt)" value="{{ old('type_docum_txt') }}">
-@error('type_docum_txt')
-<div class="alert alert-danger">{{ $message }}</div>
-@enderror
-</div> --}}
+                        @error('type_docum_txt')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                        </div> --}}
 
                             <div class="mb-3">
                                 <label for="content_docum" class="form-label">Порушені питання (question_docum_id)</label>
@@ -181,10 +181,10 @@
                             {{-- <div class="mb-3">
                         <label for="destination_office_txt" class="form-label">Куди надійшло звернення... (destination_office_txt)</label>
                         <input type="text" name= "destination_office_txt"class="form-control" id="destination_office_txt" placeholder="Куди надійшло звернення... (destination_office_txt)" value="{{ old('destination_office_txt') }}">
-    @error('destination_office_txt')
-    <div class="alert alert-danger">{{ $message }}</div>
-    @enderror
-    </div> --}}
+                        @error('destination_office_txt')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                        </div> --}}
 
 
 
@@ -224,10 +224,10 @@
                             {{-- <div class="mb-3">
                         <label for="source1_office_txt" class="form-label">Звідки одержано (1) (source1_office_txt)</label>
                         <input type="text" name= "source1_office_txt"class="form-control" id="source1_office_txt" placeholder="Звідки одержано (1) (source1_office_txt)" value="{{ old('source1_office_txt') }}">
-    @error('source1_office_txt')
-    <div class="alert alert-danger">{{ $message }}</div>
-    @enderror
-    </div> --}}
+                        @error('source1_office_txt')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                        </div> --}}
 
                             <div class="mb-3">
                                 <label for="source1_number" class="form-label">Номер (1) (source1_number)</label>
@@ -261,10 +261,10 @@
                             {{-- <div class="mb-3">
                         <label for="source2_office_txt" class="form-label">Звідки одержано (2) (source2_office_txt)</label>
                         <input type="text" name= "source2_office_txt"class="form-control" id="source2_office_txt" placeholder="Звідки одержано (2) (source2_office_txt)" value="{{ old('source2_office_txt') }}">
-    @error('source2_office_txt')
-    <div class="alert alert-danger">{{ $message }}</div>
-    @enderror
-    </div> --}}
+                        @error('source2_office_txt')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                        </div> --}}
 
                             <div class="mb-3">
                                 <label for="source2_number" class="form-label">>Номер реєстрації (2)
@@ -301,10 +301,10 @@
                             {{-- <div class="mb-3">
                         <label for="source3_office_txt" class="form-label">Звідки одержано (3) (source3_office_txt)</label>
                         <input type="text" name= "source3_office_txt"class="form-control" id="source3_office_txt" placeholder="Звідки одержано (3) (source3_office_txt)" value="{{ old('source3_office_txt') }}">
-    @error('source3_office_txt')
-    <div class="alert alert-danger">{{ $message }}</div>
-    @enderror
-    </div> --}}
+                        @error('source3_office_txt')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                        </div> --}}
 
                             <div class="mb-3">
                                 <label for="source3_number" class="form-label">Номер реєстрації (3)
@@ -340,10 +340,10 @@
                             {{-- <div class="mb-3">
                         <label for="amount_dokum_txt" class="form-label">Первинне/повторне/дубль (amount_dokum_txt)</label>
                         <input type="text" name= "amount_dokum_txt"class="form-control" id="amount_dokum_txt" placeholder="Первинне/повторне/дубль (amount_dokum_txt)" value="{{ old('amount_dokum_txt') }}">
-    @error('amount_dokum_txt')
-    <div class="alert alert-danger">{{ $message }}</div>
-    @enderror
-    </div> --}}
+                        @error('amount_dokum_txt')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                        </div> --}}
 
                         </th>
                         <th>
@@ -362,10 +362,10 @@
                             {{-- <div class="mb-3">
                         <label for="content_resolution_txt" class="form-label">Зміст резолюції розгляд відповідь/розгляд/ не за адресою/ (content_resolution_txt)</label>
                         <input type="text" name= "content_resolution_txt"class="form-control" id="content_resolution_txt" placeholder="Зміст резолюції розгляд відповідь/розгляд/ не за адресою/ (content_resolution_txt)" value="{{ old('content_resolution_txt') }}">
-    @error('content_resolution_txt')
-    <div class="alert alert-danger">{{ $message }}</div>
-    @enderror
-    </div> --}}
+                        @error('content_resolution_txt')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                        </div> --}}
 
                             <div class="mb-3">
                                 <label for="avtor_resolution" class="form-label">Автор резолюції
@@ -378,7 +378,7 @@
                                 @enderror
                             </div>
 
-                            <div class="mb-3">
+                            {{-- видалено !! <div class="mb-3">
                                 <label for="group_docum_id" class="form-label">Вид/Група документа
                                     (group_docum_id)</label>
                                 <input type="text" name="group_docum_id" class="form-control" id="group_docum_id"
@@ -387,15 +387,15 @@
                                 @error('group_docum_id')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
-                            </div>
+                            </div> --}}
 
                             {{-- <div class="mb-3">
                         <label for="group_docum_txt" class="form-label">Вид/Група документа (group_docum_txt)</label>
                         <input type="text" name= "group_docum_txt"class="form-control" id="group_docum_txt" placeholder="Вид/Група документа (group_docum_txt)" value="{{ old('group_docum_txt') }}">
-    @error('group_docum_txt')
-    <div class="alert alert-danger">{{ $message }}</div>
-    @enderror
-    </div> --}}
+                        @error('group_docum_txt')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                        </div> --}}
 
                             <div class="mb-3">
                                 <label for="executor_ophone_id" class="form-label">Виконавець (executor_ophone_id)</label>
@@ -410,17 +410,16 @@
                             {{-- <div class="mb-3">
                         <label for="executor_ophone_txt" class="form-label">Виконавець (executor_ophone_txt)</label>
                         <input type="text" name= "executor_ophone_txt"class="form-control" id="executor_ophone_txt" placeholder="Виконавець (executor_ophone_txt)" value="{{ old('executor_ophone_txt') }}">
-    @error('executor_ophone_txt')
-    <div class="alert alert-danger">{{ $message }}</div>
-    @enderror
-    </div> --}}
+                        @error('executor_ophone_txt')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                        </div> --}}
 
                             <div class="mb-3">
-                                <label for="executor_branch_id" class="form-label">Структурний підрозділ виконавця
+                                <label for="executor_branch_id" class="form-label">Структурний підрозділ
                                     (executor_branch_id)</label>
                                 <input type="text" name="executor_branch_id" class="form-control"
-                                    id="executor_branch_id"
-                                    placeholder="Структурний підрозділ виконавця (executor_branch_id)"
+                                    id="executor_branch_id" placeholder="Структурний підрозділ  (executor_branch_id)"
                                     value="{{ old('executor_branch_id') }}">
                                 @error('executor_branch_id')
                                     <div class="alert alert-danger">{{ $message }}</div>
@@ -430,10 +429,10 @@
                             {{-- <div class="mb-3">
                         <label for="executor_branch_txt" class="form-label">Відділ виконавця  (executor_branch_txt)</label>
                         <input type="text" name= "executor_branch_txt"class="form-control" id="executor_branch_txt" placeholder="Відділ виконавця  (executor_branch_txt)" value="{{ old('executor_branch_txt') }}">
-    @error('executor_branch_txt')
-    <div class="alert alert-danger">{{ $message }}</div>
-    @enderror
-    </div> --}}
+                        @error('executor_branch_txt')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                        </div> --}}
 
                             <div class="mb-3">
                                 <label for="data_implementation" class="form-label">Термін виконання
@@ -446,7 +445,7 @@
                                 @enderror
                             </div>
 
-                            <div class="mb-3">
+                            {{-- видалити !! <div class="mb-3">
                                 <label for="namber_implementation" class="form-label">Номер справи
                                     (namber_implementation)</label>
                                 <input type="text" name="namber_implementation" class="form-control"
@@ -455,7 +454,7 @@
                                 @error('namber_implementation')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
-                            </div>
+                            </div> --}}
 
                             <div class="mb-3">
                                 <label for="title_implementation_id" class="form-label">Результат розгляду
@@ -471,11 +470,11 @@
 
                             {{-- <div class="mb-3">
                         <label for="title_implementation_txt" class="form-label">Результат розгляду (title_implementation_txt)</label>
-                        <input type="text" name= "title_implementation_txt"class="form-control" id="title_implementation_txt" placeholder="Результат розгляду (title_implementation_txt)" value="{{ old('title_implementation_txt') }}">
-    @error('title_implementation_txt')
-    <div class="alert alert-danger">{{ $message }}</div>
-    @enderror
-    </div> --}}
+                                            <input type="text" name= "title_implementation_txt"class="form-control" id="title_implementation_txt" placeholder="Результат розгляду (title_implementation_txt)" value="{{ old('title_implementation_txt') }}">
+                        @error('title_implementation_txt')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                        </div> --}}
 
                             <div class="mb-3">
                                 <label for="validity_id" class="form-label">Результат розгляду (validity_id)</label>
@@ -489,10 +488,10 @@
                             {{-- <div class="mb-3">
                         <label for="validity_txt" class="form-label">Результат розгляду (validity_txt)</label>
                         <input type="text" name= "validity_txt"class="form-control" id="validity_txt" placeholder="Результат розгляду (validity_txt)" value="{{ old('validity_txt') }}">
-    @error('validity_txt')
-    <div class="alert alert-danger">{{ $message }}</div>
-    @enderror
-    </div> --}}
+                        @error('validity_txt')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                        </div> --}}
 
                             <div class="mb-3">
                                 <label for="data_our_implementation" class="form-label">Дата виконання
@@ -504,6 +503,7 @@
                                     <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                             </div>
+
                             <div class="mb-3">
                                 <label for="namber_our" class="form-label">Вихідний номер (namber_our)</label>
                                 <input type="text" name="namber_our" class="form-control" id="namber_our"
@@ -512,6 +512,7 @@
                                     <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                             </div>
+
                             <div class="mb-3">
                                 <label for="date_removal_control" class="form-label">Дата зняття з контолю
                                     (date_removal_control)</label>
@@ -522,6 +523,7 @@
                                     <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                             </div>
+
                             <div class="mb-3">
                                 <label for="name_removal_control" class="form-label">Ким знято з контролю
                                     (name_removal_control)</label>
@@ -555,10 +557,10 @@
                             {{-- <div class="mb-3">
                         <label for="user_id_txt" class="form-label">user_id_txt</label>
                         <input type="text" name= "user_id_txt"class="form-control" id="user_id_txt" placeholder="user_id_txt" value="{{ old('user_id_txt') }}">
-    @error('user_id_txt')
-    <div class="alert alert-danger">{{ $message }}</div>
-    @enderror
-    </div> --}}
+                        @error('user_id_txt')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                        </div> --}}
 
 
                         </th>

@@ -14,7 +14,7 @@ class ShowController extends BaseController
 {
     public function __invoke(Appeal $appeal)
     {
-         dd('appeal.ShowController');
-        return view('post.show', compact('post'));
+        //  dd('appeal.ShowController');
+        return view('appeal.show', compact('appeal'));
     }
 }

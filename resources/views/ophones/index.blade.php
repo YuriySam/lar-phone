@@ -50,7 +50,6 @@
 
                 @foreach ($ophones as $ophone)
                     <tr>
-
                         <td> <a href="{{ route('ophone.show', $ophone->id) }}"> {{ $ophone->surname }} {{ $ophone->name }}
                                 {{ $ophone->patronymic }}</a> </td>
                         <td> <a href="{{ route('ophone.show', $ophone->id) }}"> {{ $ophone->func->func }} </a></td>
@@ -60,8 +59,6 @@
                         <th> <a href="{{ route('ophone.show', $ophone->id) }}"> {{ $ophone->street->town_pre }} {{ $ophone->street->town }} {{ $ophone->street->street_pre }} {{ $ophone->street->street }} {{ $ophone->house }} {{ $ophone->flet }}</a></th>
                         <th> <a href="{{ route('ophone.show', $ophone->id) }}"> {{ $ophone->userMail }}</a></th>
                         <th> <a href="{{ route('ophone.show', $ophone->id) }}"> {{ $ophone->note }}</a></th>
-
-
                     </tr>
                 @endforeach
 
@@ -72,12 +69,5 @@
 
 
 
-    <div>
-        this is phone page (phone.blade)
-
-
-
-
-
-    </div>
+    
 @endsection

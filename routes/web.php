@@ -160,6 +160,15 @@ Route::group(['namespace' =>'Admin' ], function () {
         Route::patch('/message/{message}',      'UpdateController')->   name('admin.message.update');
         Route::delete('/message/{message}',     'DestroyController')->  name('admin.message.destroy');
     });
+    Route::group(['namespace' => 'Street', 'prefix' => 'admin', 'middleware' => 'admin'], function () {
+        Route::get(     '/street',                  'IndexController')->name(   'admin.street.index');
+        Route::get(     '/street/create',           'CreateController')->name(  'admin.street.create');
+        Route::post(    '/street',                 'StoreController')->name(    'admin.street.store');
+        Route::get(     '/street/{street}',        'ShowController')->name(     'admin.street.show');
+        Route::get(     '/street/{street}/edit',   'EditController')->name(     'admin.street.edit');
+        Route::patch(   '/street/{street}',      'UpdateController')->name(     'admin.street.update');
+        Route::delete(  '/street/{street}',     'DestroyController')->name(     'admin.street.destroy');
+    });
     Route::group(['namespace' => 'Numerology', 'prefix' => 'admin', 'middleware' => 'admin'], function () {
         Route::get('/numerology',                  'IndexController')->name('admin.numerology.index');
         Route::get('/numerology/create',           'CreateController')->name('admin.numerology.create');
@@ -181,8 +190,62 @@ Route::group(['namespace' =>'Admin' ], function () {
         Route::patch('/office/{office}',      'UpdateController')->name('admin.office.update');
         Route::delete('/office/{office}',     'DestroyController')->name('admin.office.destroy');
     });
-        
 
+    Route::group(['namespace' => 'Type_docum', 'prefix' => 'admin', 'middleware' => 'admin'], function () {
+        Route::get(     '/type_docum',                    'IndexController')->name('admin.type_docum.index');
+        Route::get(     '/type_docum/create',            'CreateController')->name('admin.type_docum.create');
+        Route::post(    '/type_docum',                    'StoreController')->name('admin.type_docum.store');
+        Route::get(     '/type_docum/{type_docum}',        'ShowController')->name('admin.type_docum.show');
+        Route::get(     '/type_docum/{type_docum}/edit',   'EditController')->name('admin.type_docum.edit');
+        Route::patch(   '/type_docum/{type_docum}',      'UpdateController')->name('admin.type_docum.update');
+        Route::delete(  '/type_docum/{type_docum}',     'DestroyController')->name('admin.type_docum.destroy');
+    });
+    Route::group(['namespace' => 'Question_docum', 'prefix' => 'admin', 'middleware' => 'admin'], function () {
+        Route::get(     '/question_docum',                    'IndexController'     )->name('admin.question_docum.index');
+        Route::get(     '/question_docum/create',            'CreateController'     )->name('admin.question_docum.create');
+        Route::post(    '/question_docum',                    'StoreController'     )->name('admin.question_docum.store');
+        Route::get(     '/question_docum/{question_docum}',        'ShowController' )->name('admin.question_docum.show');
+        Route::get(     '/question_docum/{question_docum}/edit',   'EditController' )->name('admin.question_docum.edit');
+        Route::patch(   '/question_docum/{question_docum}',      'UpdateController' )->name('admin.question_docum.update');
+        Route::delete(  '/question_docum/{question_docum}',     'DestroyController' )->name('admin.question_docum.destroy');
+    });
+    Route::group(['namespace' => 'Amount_docum', 'prefix' => 'admin', 'middleware' => 'admin'], function () {
+        Route::get(     '/amount_docum',                    'IndexController'   )->name('admin.amount_docum.index');
+        Route::get(     '/amount_docum/create',            'CreateController'   )->name('admin.amount_docum.create');
+        Route::post(    '/amount_docum',                    'StoreController'   )->name('admin.amount_docum.store');
+        Route::get(     '/amount_docum/{amount_docum}',        'ShowController' )->name('admin.amount_docum.show');
+        Route::get(     '/amount_docum/{amount_docum}/edit',   'EditController' )->name('admin.amount_docum.edit');
+        Route::patch(   '/amount_docum/{amount_docum}',      'UpdateController' )->name('admin.amount_docum.update');
+        Route::delete(  '/amount_docum/{amount_docum}',     'DestroyController' )->name('admin.amount_docum.destroy');
+    });
+    Route::group(['namespace' => 'Content_resolution', 'prefix' => 'admin', 'middleware' => 'admin'], function () {
+        Route::get(     '/content_resolution',                    'IndexController'         )->name('admin.content_resolution.index');
+        Route::get(     '/content_resolution/create',            'CreateController'         )->name('admin.content_resolution.create');
+        Route::post(    '/content_resolution',                    'StoreController'         )->name('admin.content_resolution.store');
+        Route::get(     '/content_resolution/{content_resolution}',        'ShowController' )->name('admin.content_resolution.show');
+        Route::get(     '/content_resolution/{content_resolution}/edit',   'EditController' )->name('admin.content_resolution.edit');
+        Route::patch(   '/content_resolution/{content_resolution}',      'UpdateController' )->name('admin.content_resolution.update');
+        Route::delete(  '/content_resolution/{content_resolution}',     'DestroyController' )->name('admin.content_resolution.destroy');
+    });
+    Route::group(['namespace' => 'Title_implementation', 'prefix' => 'admin', 'middleware' => 'admin'], function () {
+        Route::get(     '/title_implementation',                    'IndexController'           )->name('admin.title_implementation.index');
+        Route::get(     '/title_implementation/create',            'CreateController'           )->name('admin.title_implementation.create');
+        Route::post(    '/title_implementation',                    'StoreController'           )->name('admin.title_implementation.store');
+        Route::get(     '/title_implementation/{title_implementation}',        'ShowController' )->name('admin.title_implementation.show');
+        Route::get(     '/title_implementation/{title_implementation}/edit',   'EditController' )->name('admin.title_implementation.edit');
+        Route::patch(   '/title_implementation/{title_implementation}',      'UpdateController' )->name('admin.title_implementation.update');
+        Route::delete(  '/title_implementation/{title_implementation}',     'DestroyController' )->name('admin.title_implementation.destroy');
+    });
+
+    Route::group(['namespace' => 'Validity', 'prefix' => 'admin', 'middleware' => 'admin'], function () {
+        Route::get(     '/validity',                    'IndexController'   )->name('admin.validity.index');
+        Route::get(     '/validity/create',            'CreateController'   )->name('admin.validity.create');
+        Route::post(    '/validity',                    'StoreController'   )->name('admin.validity.store');
+        Route::get(     '/validity/{validity}',        'ShowController'     )->name('admin.validity.show');
+        Route::get(     '/validity/{validity}/edit',   'EditController'     )->name('admin.validity.edit');
+        Route::patch(   '/validity/{validity}',      'UpdateController'     )->name('admin.validity.update');
+        Route::delete(  '/validity/{validity}',     'DestroyController'     )->name('admin.validity.destroy');
+    });
     
 });
 
@@ -195,7 +258,7 @@ Route::group(['namespace' => 'Appeal'], function () {
     Route::get(      '/appeal/create',  'CreateController'   )->name('appeal.create');
     Route::post(     '/appeal', 'StoreController'            )->name('appeal.store');
     Route::get(      '/appeal/{appeal}', 'ShowController'    )->name('appeal.show');
-//     // Route::get(      '/appeal/{appeal}/edit','EditController')->name('appeal.edit');
-//     // Route::patch(    '/appeal/{appeal}', 'UpdateController'  )->name('appeal.update');
-//     // Route::delete(   '/appeal/{appeal}', 'DestroyController' )->name('appeal.destroy');
+    Route::get(      '/appeal/{appeal}/edit','EditController')->name('appeal.edit');
+    Route::patch(    '/appeal/{appeal}', 'UpdateController'  )->name('appeal.update');
+    Route::delete(   '/appeal/{appeal}', 'DestroyController' )->name('appeal.destroy');
  });
