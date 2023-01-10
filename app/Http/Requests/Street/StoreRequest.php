@@ -24,7 +24,16 @@ class StoreRequest extends FormRequest
     public function rules()
     {
         return [
+            'town_pre' => 'string',
+            'town' => 'string',
+            'street_pre' => 'string',
             'street' => 'string',
+            'house' => '',
+            'flat' => '',
+            'user_id' => '',
+            'user_id_txt' => '',
+             
+
             
         ];
     }

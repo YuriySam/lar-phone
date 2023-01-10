@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
+
 @section('content')
+
+{{-- {{dd('login.blade.php')}} --}}
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -58,9 +61,9 @@
                                 </button>
 
                                 @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                    {{-- <a class="btn btn-link" href="{{ route('password.request') }}">
                                         {{ __('Забули пароль?') }}
-                                    </a>
+                                    </a> --}}
                                 @endif
                             </div>
                         </div>

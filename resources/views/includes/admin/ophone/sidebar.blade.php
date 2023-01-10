@@ -48,7 +48,7 @@
                    <li class="nav-item">
                       <a href="{{ route('admin.street.index') }}" class="nav-link">
                           <i class="far fa-circle nav-icon"></i>
-                          <p>Address street</p>
+                          <p>street</p>
                       </a>
                   </li>
                     <li class="nav-item">

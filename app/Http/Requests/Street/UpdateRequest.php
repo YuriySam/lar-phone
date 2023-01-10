@@ -24,7 +24,14 @@ class UpdateRequest extends FormRequest
     public function rules()
     {
         return [
+            'town_pre' => 'string',
+            'town' => 'string',
+            'street_pre' => 'string',
             'street' => 'string',
+            'house' => 'string',
+            'flat' => '',
+            'user_id' => '',
+            'user_id_txt' => '',
         ];
     }
 }

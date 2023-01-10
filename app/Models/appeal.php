@@ -45,7 +45,7 @@ class Appeal extends Model
     //додамо зв'язок з Порушені питання тип
     public function question_docum()
     {
-        return $this->belongsTo(Question_docum::class, 'question_docums_id', 'id');
+        return $this->belongsTo(Question_docum::class, 'question_docum_id', 'id');
     }
     //додамо зв'язок з Куди надійшло звернення... (destination_office_id)
     public function destination_office()
@@ -63,6 +63,43 @@ class Appeal extends Model
     {
         return $this->belongsTo(Office::class, 'source2_office_id', 'id');
     }
-    // Первинне/повторне/дубль (amount_dokum_id)
+    // Первинне/повторне/дубль (amount_docum_id)
+    public function amount_docum()
+    {
+        return $this->belongsTo(Amount_docum::class, 'amount_docum_id', 'id');
+    }
 
+    //Зміст резолюції розгляд відповідь/розгляд/ не за адресою/ (content_resolution_id)
+    public function content_resolution()
+    {
+        return $this->belongsTo(Content_resolution::class,'content_resolution_id','id');
+    }
+
+    
+
+    //Виконавець (executor_ophone_id)
+    public function executor_ophone()
+    {
+        return $this->belongsTo(Ophone::class, 'executor_ophone_id', 'id');
+    }
+
+     //Структурний підрозділ (executor_branch_id)
+     public function executor_branch()
+     {
+         return $this->belongsTo(Branch::class, 'executor_branch_id', 'id');
+     }
+
+    //Результат розгляду (title_implementation_id)
+    public function title_implementation()
+    {
+        return $this->belongsTo(Title_implementation::class, 'title_implementation_id', 'id');
+    }
+
+    //Результат розгляду (validity_id)
+    public function validity()
+    {
+        return $this->belongsTo(Validity::class, 'validity_id', 'id');
+    }
+
+    
 }

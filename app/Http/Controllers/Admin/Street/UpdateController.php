@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\Street\UpdateRequest;
 
-use App\Models\street;
+use App\Models\Street;
 
 class UpdateController extends Controller
 {

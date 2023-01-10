@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin\Street;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-use App\Models\street;
+use App\Models\Street;
 
 class CreateController extends Controller
 {

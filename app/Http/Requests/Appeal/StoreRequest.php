@@ -26,9 +26,9 @@ class StoreRequest extends FormRequest
 //  dd('storerequest');
         
         return [
-'number'                    => '',                      
-'data_reg'                  => '',
-'number_reg'                => '',
+'number'                    => 'integer',                      
+'data_reg'                  => 'date',
+'number_reg'                => 'string',
 'surname_reg'               => '',
 'name_reg'                  => '',             
 'patronymic'                => '',              
